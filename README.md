@@ -1,17 +1,18 @@
-# Bryan Lim Portfolio — V3.12 Clean Fix
+# Bryan Lim Portfolio — V3.13 CV + Contact
 
-This rebuild fixes the issues from V3.11 at the source instead of stacking visual patches.
+Built from V3.12.
 
 Changes:
-- Added a proper divider and breathing room beneath the B. sidebar header.
-- Explicitly mapped the correct uploaded logo to each career card:
-  - Maneuver Marketing -> Maneuver logo
-  - ShopBack -> ShopBack logo
-  - TikTok -> TikTok logo
-- Removed the dotted connector lines from the builder hero entirely.
-- Rebuilt the systems terminal as crisp HTML text with larger typography and no rotation.
-- Moved the Talent sticky note fully inside the canvas and gave it clear content.
-- Repositioned the hero cards to reduce overlap/cropping.
-- Keeps the Classic × Tech typography, Modern Archive palette, sizing and remaining site structure.
+- Adds a `VIEW / DOWNLOAD CV` CTA beside `EXPLORE MY WORK` in the homepage hero.
+- Uses Bryan's newly uploaded resume PDF.
+- Resume is embedded directly in index.html, so no PDF/assets folder is required for GitHub upload.
+- Replaces generic email CTA wording with the visible email address:
+  bryanlimweikai@gmail.com
+- The displayed email remains clickable via mailto and can also be copied normally.
+- Existing Modern Archive / Classic × Tech design remains unchanged.
 
-No asset folder is required; career logos are embedded in index.html.
+Deploy:
+1. Unzip.
+2. Upload/overwrite all files in the GitHub repository root.
+3. Commit.
+4. Vercel should redeploy automatically.
