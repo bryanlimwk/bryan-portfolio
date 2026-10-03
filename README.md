@@ -1,11 +1,11 @@
-# Bryan Lim Portfolio — V3.21 Experience Update
+# Bryan Lim Portfolio — V3.22 About Page
 
-Built from V3.20.
+Built from V3.21.
 
-Experience page updates:
-- Evergreen hero title: “Different chapters. One evolving way of working.”
-- Adds square company logos to Maneuver Marketing, ShopBack and TikTok chapter headers.
-- Adds LinkedIn buttons below each logo.
-- LinkedIn URLs use the companies' official LinkedIn company pages.
-- Logos are embedded directly in `experience.html`, so no assets folder is required.
-- Home, Work and ShopBack Connect pages remain unchanged.
+Updates:
+- Rebuilds About as a simpler, personal editorial page.
+- Removes the old pinboard / Pokémon-specific content.
+- Adds short personal introduction, four concise personal metadata cards, and a dark contact close.
+- Uses the approved Singapore/workspace visual direction.
+- LinkedIn and visible email CTAs included.
+- Experience page from V3.21 and all prior approved pages are preserved.
