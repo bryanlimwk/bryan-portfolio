@@ -1,20 +1,12 @@
-# Bryan Lim Portfolio — V3.5 Typography Pass
+# Bryan Lim Portfolio — V3.6 Builder Hero
 
-Built on the locked V3.4 Modern Archive colour direction.
+Built on V3.5 typography and Modern Archive colours.
 
-This pass increases the lower end of the typography scale while preserving the large hero/page headlines.
+Changes:
+- New hero headline: “I started in Talent Acquisition. My curiosity didn't stop there.”
+- Hero copy rewritten to avoid repetition.
+- Replaces the hero photograph with a startup-tech builder canvas built entirely in HTML/CSS.
+- Keeps the left sidebar and the rest of the site structure.
+- Uses SALLY, systems, data visibility and People/Business/Systems/AI as visual motifs without turning the page into a product landing page.
 
-Key changes:
-- Hero body: 13px -> 16px
-- Main body copy: generally 14-16px
-- Career card copy: 10px -> 14px
-- Featured Work descriptions: 11px -> 14px
-- Curiosity descriptions: 9px -> 13px
-- Navigation: 11px -> 13px
-- Buttons: 10px -> 12px
-- Section headings: 18px -> 23px
-- Career company names: 14px -> 18px
-- Featured project names: 20px -> 25px
-- Metadata remains intentionally smaller.
-
-Upload/overwrite all files in your existing GitHub repository root and commit.
+Deploy by uploading/overwriting the files in the existing GitHub repository root.

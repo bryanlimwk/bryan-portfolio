@@ -57,3 +57,64 @@ a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-w
 .connect{display:grid;grid-template-columns:1fr auto;gap:28px;padding:38px 0;border-top:1px solid var(--line)}.connect h2{font-size:32px;margin:8px 0}.link-row{display:flex;gap:16px;flex-wrap:wrap;font:800 9px ui-monospace,SFMono-Regular,Menlo,monospace}.vertical{flex-direction:column}.site-footer{border-top:1px solid var(--line);padding:22px 0;font:700 8px ui-monospace,SFMono-Regular,Menlo,monospace;color:#7a827d;display:flex;justify-content:space-between}
 @media(max-width:900px){:root{--sidebar:0px}.side-nav{position:static;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line);display:flex;flex-direction:row;align-items:center;padding:14px 18px}.side-brand{margin:0 24px 0 0}.side-nav nav{flex-direction:row;gap:18px;flex-wrap:wrap}.side-meta{display:none}.page{margin-left:0}.top-strip{display:none}.home-hero{grid-template-columns:1fr}.hero-visual{min-height:260px}.career-cards,.feature-grid,.work-v2-grid{grid-template-columns:1fr}.career-card{grid-template-columns:1fr 140px}.curiosity-row{grid-template-columns:1fr}.curiosity-note{margin-left:0}.about-close{grid-template-columns:1fr}.about-close .bio{border-left:0;padding-left:0}}
 @media(max-width:600px){.side-nav nav a{font-size:9px}.hero-copy{padding:30px 20px}.home-section{padding:20px}.section-head{grid-template-columns:1fr}.section-link{margin-top:4px}.career-card{grid-template-columns:1fr}.card-img{height:150px;border-left:0;border-top:1px solid var(--line)}.sally-mini{grid-template-columns:1fr}.feature-visual{min-height:auto}.chapter{grid-template-columns:1fr}.chapter-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}}
+
+
+/* V3.6 — startup-tech builder hero */
+.builder-canvas{
+  position:relative; min-height:420px; overflow:hidden;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(110,85,217,.09), transparent 28%),
+    radial-gradient(circle at 82% 82%, rgba(213,166,61,.12), transparent 30%),
+    #F8F5EC;
+}
+.grid-bg{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(21,32,30,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,32,30,.045) 1px, transparent 1px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(to left, black 70%, transparent);
+  -webkit-mask-image:linear-gradient(to left, black 70%, transparent);
+}
+.builder-canvas::after{display:none}
+.canvas-card{
+  position:absolute;background:rgba(255,255,255,.93);
+  border:1px solid rgba(21,32,30,.12);border-radius:12px;
+  box-shadow:0 14px 36px rgba(21,32,30,.08);backdrop-filter:blur(5px)
+}
+.sally-card{top:56px;left:17%;width:40%;padding:16px;transform:rotate(-1.2deg)}
+.canvas-card-head{display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:12px}
+.spark{color:var(--violet);font-size:17px}
+.status-dot{margin-left:auto;font:700 7px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;color:var(--teal);background:#E8F1EE;border-radius:999px;padding:4px 6px}
+.checkline{font-size:10px;padding:6px 0;border-top:1px solid #ECE9E0;color:#4B5550}
+.system-card{top:158px;right:7%;width:29%;padding:16px;background:#192320;color:#EAF3EF;transform:rotate(1deg)}
+.mini-code-title{font:800 8px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em;color:#9CC7B9;margin-bottom:9px}
+.mini-code{font:600 10px ui-monospace,SFMono-Regular,Menlo,monospace;margin:5px 0;color:#D9E7E2}
+.data-card{left:11%;bottom:45px;width:38%;padding:14px;transform:rotate(.7deg)}
+.tiny-bars{height:72px;display:flex;gap:8px;align-items:end;padding:10px 2px 6px}
+.tiny-bars i{display:block;flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#4E8069,#9BC0AF)}
+.tiny-labels{display:flex;justify-content:space-between;gap:6px;font-size:7px;color:#69726D}
+.thinking-card{right:10%;bottom:36px;width:32%;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:7px;transform:rotate(-1deg)}
+.thinking-card span{border:1px solid #E4DFD4;border-radius:8px;background:#FAF8F2;padding:8px 9px;font-size:9px;font-weight:750}
+.thinking-card span:nth-child(4){color:var(--violet);border-color:#D9D1F7;background:#F1EEFD}
+.canvas-note{position:absolute;z-index:3;background:#EFE5B9;border:1px solid rgba(145,112,37,.22);box-shadow:0 10px 24px rgba(21,32,30,.07);padding:12px 13px;transform:rotate(-3deg)}
+.note-a{left:5%;top:22px;width:145px}
+.canvas-note strong{display:block;font-size:15px;margin:4px 0}.canvas-note small{display:block;font-size:8px;line-height:1.4;color:#655E49}
+.note-kicker{font:800 7px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.09em;color:#866719}
+.scribble-card{position:absolute;right:4%;top:28px;border:1.5px solid #1F2A26;border-radius:18px;padding:10px 16px;transform:rotate(3deg);background:#FBF9F2;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:12px;line-height:1.12;text-align:center}
+.connector-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.connector-lines path{fill:none;stroke:#6E55D9;stroke-width:2;stroke-linecap:round;stroke-dasharray:7 9;opacity:.72}
+.cursor{position:absolute;z-index:5;font-size:23px;color:#172421}
+.cursor-one{left:57%;bottom:95px;transform:rotate(14deg)}.cursor-two{right:3%;top:245px;color:var(--violet);transform:rotate(22deg)}
+.accent-block{position:absolute;z-index:1;width:48px;height:48px}.block-one{right:25%;top:93px;background:var(--teal);transform:rotate(8deg)}.block-two{left:46%;bottom:18px;background:var(--mustard);transform:rotate(-6deg)}
+.builder-canvas .canvas-card,.builder-canvas .canvas-note,.builder-canvas .scribble-card,.builder-canvas .accent-block{transition:transform .2s ease,box-shadow .2s ease}
+.builder-canvas:hover .sally-card{transform:rotate(-1.2deg) translateY(-3px)}
+.builder-canvas:hover .system-card{transform:rotate(1deg) translateY(-2px)}
+.builder-canvas:hover .data-card{transform:rotate(.7deg) translateY(-2px)}
+.builder-canvas:hover .thinking-card{transform:rotate(-1deg) translateY(-2px)}
+@media(max-width:900px){
+  .builder-canvas{min-height:390px}.sally-card{left:12%;width:44%}.system-card{right:5%;width:32%}.data-card{left:8%;width:42%}.thinking-card{right:7%;width:35%}
+}
+@media(max-width:600px){
+  .builder-canvas{min-height:460px}.note-a{left:4%;top:18px}.sally-card{left:6%;top:92px;width:62%}.system-card{right:5%;top:205px;width:45%}.data-card{left:6%;bottom:34px;width:52%}.thinking-card{right:5%;bottom:28px;width:36%}.scribble-card{right:4%;top:22px}
+}
