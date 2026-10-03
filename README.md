@@ -1,19 +1,13 @@
-# Bryan Lim Portfolio — V3
+# Bryan Lim Portfolio — V3.1
 
-This version redesigns the main portfolio around the approved visual reference:
-- fixed left navigation on desktop
-- warm cream editorial canvas
-- split hero with workspace visual
-- compact career cards
-- richer Featured Work cards
-- interactive curiosity cards
-- redesigned Experience, Work and About pages using the same system
+This version fixes the broken homepage visuals by embedding the approved image assets directly into `index.html`.
 
-Interactive project experiences remain:
-- sally.html
-- dashboard.html
-- shopback-connect.html
+You no longer need to upload a separate `assets` folder.
 
 ## Deploy
-Upload/overwrite all files and the `assets` folder in the existing GitHub repository root.
-Vercel should redeploy automatically.
+1. Unzip this package.
+2. Upload/overwrite all files in the existing GitHub repository root.
+3. Commit changes.
+4. Vercel should redeploy automatically.
+
+The existing SALLY, Dashboard and ShopBack Connect experiences are preserved.
