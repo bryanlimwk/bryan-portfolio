@@ -63,10 +63,7 @@ img{display:block;max-width:100%}
 .hero-visual::after{
   content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,241,231,.35),transparent 25%);
 }
-.doodle{
-  position:absolute;z-index:3;font-family:"Comic Sans MS","Bradley Hand",cursive;font-size:16px;line-height:1.05;transform:rotate(-8deg)
-}
-.d1{left:26%;top:17%}.d2{left:52%;top:9%;transform:rotate(-6deg)}.d3{right:9%;top:20%;transform:rotate(-8deg)}
+
 .home-section{border-bottom:1px solid var(--line);padding:18px 24px 22px}
 .section-head{
   display:grid;grid-template-columns:170px 1fr auto;gap:12px;align-items:start;margin-bottom:16px
@@ -116,12 +113,7 @@ img{display:block;max-width:100%}
 .mini-tabs{display:flex;gap:10px;font-size:8px;border-bottom:1px solid #ebe7dd;padding-bottom:8px}.mini-tabs strong{border-bottom:2px solid var(--ink);padding-bottom:7px}
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:12px}.mkpi{background:#f7f5ee;border-radius:6px;padding:8px}.mkpi b{display:block;font-size:18px}.mkpi span{font-size:6px;color:#737b76}
 .chart-bars{height:110px;display:flex;align-items:end;gap:12px;padding:20px 8px 0}.chart-bars i{width:22px;background:#668574}.chart-bars i:nth-child(2){background:#9bb2a3}.chart-bars i:nth-child(3){background:#758f82}.chart-bars i:nth-child(4){background:#a6b8ae}.chart-bars i:nth-child(5){background:#5d806b}.chart-bars i:nth-child(6){background:#c3cec5}
-.connect-mini{
-  height:100%;display:flex;flex-direction:column;justify-content:flex-end;border-radius:8px;padding:16px;
-  background:linear-gradient(135deg,#7b4034,#b8694f 55%,#e2c5a2);color:white;position:relative;overflow:hidden
-}
-.connect-mini::before{content:"SHOPBACK\A CONNECT";white-space:pre;position:absolute;left:18px;top:18px;font-size:31px;font-weight:900;line-height:.9;transform:rotate(-3deg);opacity:.95}
-.connect-mini small{font:700 8px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.07em}.connect-mini p{font-size:10px;color:white;max-width:240px}
+
 .curiosity-row{display:grid;grid-template-columns:205px repeat(3,1fr);gap:14px;align-items:stretch}
 .curiosity-intro h2{font-size:22px;line-height:1.04;margin:0 0 8px}.curiosity-intro p{font-size:10px;color:#68716c;margin:0}
 .curiosity-card{
@@ -169,4 +161,53 @@ img{display:block;max-width:100%}
   .card-img{height:150px;border-left:0;border-top:1px solid var(--line)}
   .sally-mini{grid-template-columns:1fr}.feature-visual{min-height:auto}
   .chapter{grid-template-columns:1fr}.chapter-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}
+}
+
+
+.connect-preview{
+  height:100%;
+  min-height:235px;
+  border-radius:8px;
+  padding:18px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255,255,255,.16), transparent 27%),
+    linear-gradient(135deg,#6f352d 0%,#a95743 55%,#d7a078 100%);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  overflow:hidden;
+}
+.connect-label{
+  font:800 8px ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.12em;
+  opacity:.82;
+}
+.connect-title{
+  margin-top:24px;
+  font-size:clamp(28px,3vw,42px);
+  line-height:.88;
+  letter-spacing:-.055em;
+  font-weight:900;
+}
+.connect-rule{
+  width:42px;
+  height:2px;
+  background:rgba(255,255,255,.78);
+  margin:18px 0 14px;
+}
+.connect-meta{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font:750 8px ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.06em;
+}
+.connect-foot{
+  margin-top:auto;
+  padding-top:18px;
+  font-size:9px;
+  line-height:1.45;
+  color:rgba(255,255,255,.82);
+  max-width:260px;
 }
