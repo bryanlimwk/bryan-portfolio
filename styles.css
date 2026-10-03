@@ -280,116 +280,176 @@ body,
   }
 }
 
-/* V3.11 fixes */
-.top-strip{
-  height:58px;
-  padding:0 34px;
+
+/* V3.12 — clean corrective pass */
+
+/* Sidebar: clear divider beneath brand + breathing room */
+.side-brand{
+  margin:0 0 0;
+  padding:0 0 20px;
+  border-bottom:1px solid var(--line);
 }
-.home-hero{
-  border-top:0;
-}
-.hero-copy{
-  padding-top:52px;
-}
-.side-nav{
+.side-nav nav{
   padding-top:22px;
 }
 
-/* Career cards: correct square logo treatment */
+/* Company card layout + exact square logos */
 .career-card{
-  grid-template-columns:1fr 132px;
-  min-height:172px;
+  grid-template-columns:minmax(0,1fr) 132px !important;
+  min-height:172px !important;
+  align-items:center !important;
 }
 .card-img{
-  width:132px;
-  height:132px;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  align-self:center;
-  justify-self:end;
-  margin-right:0;
-  border-left:1px solid var(--line);
-}
-@media(max-width:900px){
-  .career-card{grid-template-columns:1fr 132px}
-}
-@media(max-width:600px){
-  .career-card{grid-template-columns:1fr}
-  .card-img{
-    width:100%;
-    height:auto;
-    aspect-ratio:1/1;
-    border-left:0;
-    border-top:1px solid var(--line);
-  }
+  width:132px !important;
+  height:132px !important;
+  aspect-ratio:1/1 !important;
+  object-fit:cover !important;
+  align-self:center !important;
+  justify-self:end !important;
+  border-left:1px solid var(--line) !important;
 }
 
-/* Builder canvas clarity */
-.system-card{
-  top:150px;
-  right:6%;
-  width:31%;
-  padding:17px 18px 16px;
-  background:#16211E;
-  color:#EAF3EF;
-  border:1px solid rgba(255,255,255,.08);
-  box-shadow:0 16px 34px rgba(10,20,18,.18);
-  transform:rotate(.6deg);
+/* Builder canvas: intentionally no connector lines */
+.builder-canvas{
+  min-height:420px;
+  position:relative;
+  overflow:hidden;
 }
-.system-top{
+.connector-lines,
+.cursor-one,
+.cursor-two{
+  display:none !important;
+}
+
+/* Keep the Talent note fully inside the canvas */
+.talent-note{
+  position:absolute;
+  left:5%;
+  top:26px;
+  width:150px;
+  min-height:118px;
+  z-index:5;
+  padding:13px 14px;
+  transform:rotate(-2deg);
+  background:#EFE5B9;
+  border:1px solid rgba(145,112,37,.24);
+  border-radius:2px;
+  box-shadow:0 10px 22px rgba(21,32,30,.08);
+}
+.talent-note strong{
+  display:block;
+  margin:5px 0 6px;
+  font-size:17px;
+}
+.talent-note small{
+  display:block;
+  font-size:9px;
+  line-height:1.55;
+  color:#655E49;
+}
+
+/* SALLY sits clear of the note */
+.sally-card{
+  top:50px !important;
+  left:31% !important;
+  width:43% !important;
+  transform:none !important;
+}
+
+/* Crisp terminal card: larger text, no transforms */
+.terminal-card{
+  position:absolute;
+  top:164px;
+  right:5%;
+  width:31%;
+  padding:16px 17px 17px;
+  z-index:4;
+  background:#16211E;
+  color:#E7F0EC;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  box-shadow:0 16px 34px rgba(10,20,18,.16);
+  font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  transform:none;
+}
+.terminal-top{
   display:flex;
   align-items:center;
   gap:9px;
-  margin-bottom:10px;
+  margin-bottom:12px;
+  font-size:9px;
+  color:#A9C8BE;
 }
-.system-lights{
-  color:#D96C2B;
-  font-size:8px;
+.terminal-lights{
+  color:#D5A63D;
   letter-spacing:2px;
 }
-.system-card .mini-code-title{
-  margin:0;
-  color:#A9C8BE;
-  font-size:9px;
-}
-.system-card .mini-code{
+.terminal-line{
   display:grid;
-  grid-template-columns:24px 1fr;
+  grid-template-columns:26px 1fr;
   gap:8px;
   align-items:center;
   margin:7px 0;
-  font-size:12px;
   line-height:1.25;
 }
-.system-card .mini-code span{
-  color:#70827B;
+.terminal-line em{
+  font-style:normal;
   font-size:9px;
+  color:#71847C;
 }
-.system-card .mini-code b{
-  color:#DDF0E8;
+.terminal-line b{
+  font-size:12px;
   font-weight:500;
+  color:#DFF1EA;
 }
-.canvas-note{
-  min-height:105px;
+
+/* Reposition remaining hero pieces with cleaner separation */
+.data-card{
+  left:12% !important;
+  bottom:38px !important;
+  width:39% !important;
+  transform:none !important;
 }
-.canvas-note small{
-  font-size:9px;
-  line-height:1.55;
+.thinking-card{
+  right:7% !important;
+  bottom:32px !important;
+  width:34% !important;
+  transform:none !important;
 }
-.connector-lines{
-  z-index:2;
+.scribble-card{
+  right:4% !important;
+  top:28px !important;
 }
-.connector-lines .conn{
-  fill:none;
-  stroke-width:2.2;
-  stroke-linecap:round;
-  stroke-dasharray:8 9;
-  opacity:.72;
+
+/* Top strip itself gets more vertical air */
+.top-strip{
+  height:56px !important;
+  padding:0 34px !important;
 }
-.connector-lines .violet{stroke:#6E55D9}
-.connector-lines .teal{stroke:#0F4D4A}
-.connector-lines .mustard{stroke:#D5A63D}
-.conn-dot.violet-dot{fill:#6E55D9}
-.conn-dot.teal-dot{fill:#0F4D4A}
-.conn-dot.mustard-dot{fill:#D5A63D}
-.cursor-two{display:none}
+
+@media(max-width:900px){
+  .side-brand{
+    border-bottom:0;
+    padding-bottom:0;
+    margin-right:24px;
+  }
+  .side-nav nav{padding-top:0}
+  .career-card{grid-template-columns:minmax(0,1fr) 132px !important}
+  .sally-card{left:27% !important;width:48% !important}
+  .terminal-card{right:4%;width:34%}
+}
+@media(max-width:600px){
+  .career-card{grid-template-columns:1fr !important}
+  .card-img{
+    width:100% !important;
+    height:auto !important;
+    border-left:0 !important;
+    border-top:1px solid var(--line) !important;
+  }
+  .builder-canvas{min-height:500px}
+  .talent-note{left:4%;top:18px;width:135px}
+  .sally-card{left:6% !important;top:125px !important;width:64% !important}
+  .terminal-card{right:4%;top:235px;width:48%}
+  .data-card{left:5% !important;bottom:30px !important;width:52% !important}
+  .thinking-card{right:4% !important;bottom:25px !important;width:37% !important}
+}

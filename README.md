@@ -1,16 +1,17 @@
-# Bryan Lim Portfolio — V3.11 Fixes
+# Bryan Lim Portfolio — V3.12 Clean Fix
 
-Fixes based on the latest review:
-- Increased breathing room in the top header/divider area.
-- Corrected the career company images so Maneuver, ShopBack and TikTok each use the right logo.
-- Career logos remain square.
-- Rebuilt the Systems card in the builder hero for sharper text and a cleaner terminal look.
-- Connector lines now visibly attach to elements with endpoint dots.
-- Sticky note now has intentional content instead of reading as empty.
-- Everything else from V3.10 / Classic × Tech remains unchanged.
+This rebuild fixes the issues from V3.11 at the source instead of stacking visual patches.
 
-Deploy:
-1. Unzip.
-2. Upload/overwrite all files in the GitHub repository root.
-3. Commit.
-4. Vercel should redeploy automatically.
+Changes:
+- Added a proper divider and breathing room beneath the B. sidebar header.
+- Explicitly mapped the correct uploaded logo to each career card:
+  - Maneuver Marketing -> Maneuver logo
+  - ShopBack -> ShopBack logo
+  - TikTok -> TikTok logo
+- Removed the dotted connector lines from the builder hero entirely.
+- Rebuilt the systems terminal as crisp HTML text with larger typography and no rotation.
+- Moved the Talent sticky note fully inside the canvas and gave it clear content.
+- Repositioned the hero cards to reduce overlap/cropping.
+- Keeps the Classic × Tech typography, Modern Archive palette, sizing and remaining site structure.
+
+No asset folder is required; career logos are embedded in index.html.
