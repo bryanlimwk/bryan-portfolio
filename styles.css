@@ -242,3 +242,40 @@ body,
 .company-title{
   letter-spacing:-.02em;
 }
+
+
+/* V3.9 — square career/company visuals */
+.career-card img,
+.career-image img,
+.career-visual img,
+.company-image img{
+  aspect-ratio:1 / 1;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  display:block;
+}
+
+/* Desktop: give the square mark a deliberate, compact footprint */
+@media(min-width:901px){
+  .career-card{
+    align-items:center;
+  }
+  .career-image,
+  .career-visual,
+  .company-image{
+    aspect-ratio:1 / 1;
+    overflow:hidden;
+  }
+}
+
+/* Mobile keeps the company marks square rather than stretching them */
+@media(max-width:900px){
+  .career-card img,
+  .career-image img,
+  .career-visual img,
+  .company-image img{
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+  }
+}
