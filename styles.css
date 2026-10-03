@@ -279,3 +279,117 @@ body,
     object-fit:cover;
   }
 }
+
+/* V3.11 fixes */
+.top-strip{
+  height:58px;
+  padding:0 34px;
+}
+.home-hero{
+  border-top:0;
+}
+.hero-copy{
+  padding-top:52px;
+}
+.side-nav{
+  padding-top:22px;
+}
+
+/* Career cards: correct square logo treatment */
+.career-card{
+  grid-template-columns:1fr 132px;
+  min-height:172px;
+}
+.card-img{
+  width:132px;
+  height:132px;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  align-self:center;
+  justify-self:end;
+  margin-right:0;
+  border-left:1px solid var(--line);
+}
+@media(max-width:900px){
+  .career-card{grid-template-columns:1fr 132px}
+}
+@media(max-width:600px){
+  .career-card{grid-template-columns:1fr}
+  .card-img{
+    width:100%;
+    height:auto;
+    aspect-ratio:1/1;
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
+}
+
+/* Builder canvas clarity */
+.system-card{
+  top:150px;
+  right:6%;
+  width:31%;
+  padding:17px 18px 16px;
+  background:#16211E;
+  color:#EAF3EF;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 16px 34px rgba(10,20,18,.18);
+  transform:rotate(.6deg);
+}
+.system-top{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:10px;
+}
+.system-lights{
+  color:#D96C2B;
+  font-size:8px;
+  letter-spacing:2px;
+}
+.system-card .mini-code-title{
+  margin:0;
+  color:#A9C8BE;
+  font-size:9px;
+}
+.system-card .mini-code{
+  display:grid;
+  grid-template-columns:24px 1fr;
+  gap:8px;
+  align-items:center;
+  margin:7px 0;
+  font-size:12px;
+  line-height:1.25;
+}
+.system-card .mini-code span{
+  color:#70827B;
+  font-size:9px;
+}
+.system-card .mini-code b{
+  color:#DDF0E8;
+  font-weight:500;
+}
+.canvas-note{
+  min-height:105px;
+}
+.canvas-note small{
+  font-size:9px;
+  line-height:1.55;
+}
+.connector-lines{
+  z-index:2;
+}
+.connector-lines .conn{
+  fill:none;
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-dasharray:8 9;
+  opacity:.72;
+}
+.connector-lines .violet{stroke:#6E55D9}
+.connector-lines .teal{stroke:#0F4D4A}
+.connector-lines .mustard{stroke:#D5A63D}
+.conn-dot.violet-dot{fill:#6E55D9}
+.conn-dot.teal-dot{fill:#0F4D4A}
+.conn-dot.mustard-dot{fill:#D5A63D}
+.cursor-two{display:none}

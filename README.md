@@ -1,16 +1,16 @@
-# Bryan Lim Portfolio — V3.10 Embedded Career Logos
+# Bryan Lim Portfolio — V3.11 Fixes
 
-Built from V3.9.
-
-Change:
-- Maneuver Marketing, ShopBack and TikTok square logos are now embedded directly inside `index.html`.
-- No `assets` folder is required.
-- Everything else from V3.9 remains unchanged.
+Fixes based on the latest review:
+- Increased breathing room in the top header/divider area.
+- Corrected the career company images so Maneuver, ShopBack and TikTok each use the right logo.
+- Career logos remain square.
+- Rebuilt the Systems card in the builder hero for sharper text and a cleaner terminal look.
+- Connector lines now visibly attach to elements with endpoint dots.
+- Sticky note now has intentional content instead of reading as empty.
+- Everything else from V3.10 / Classic × Tech remains unchanged.
 
 Deploy:
-1. Unzip this package.
-2. In GitHub, choose Add file -> Upload files.
-3. Select all files inside the unzipped folder.
-4. Upload/overwrite them in the repository root.
-5. Commit changes.
-6. Vercel should redeploy automatically.
+1. Unzip.
+2. Upload/overwrite all files in the GitHub repository root.
+3. Commit.
+4. Vercel should redeploy automatically.
