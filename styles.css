@@ -769,76 +769,64 @@ body,
   .shopback-work-visual img{height:auto}
 }
 
-
-/* V3.18 — distributed ShopBack Connect visuals */
-.case-inline-visual{
-  margin:30px 0 6px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  overflow:hidden;
-  background:#F8F5ED;
+/* V3.19 — ShopBack Connect case study */
+.sb-case{padding:28px 30px 60px;max-width:1320px}
+.sb-back{display:inline-block;margin-bottom:24px;font:600 9px "DM Mono",monospace;letter-spacing:.06em}
+.sb-hero{display:grid;grid-template-columns:.78fr 1.22fr;gap:28px;align-items:stretch;padding-bottom:44px;border-bottom:1px solid var(--line)}
+.sb-hero-copy{padding:18px 0}
+.sb-hero h1{font-family:"Fraunces",Georgia,serif;font-size:clamp(56px,7vw,92px);line-height:.86;letter-spacing:-.05em;margin:16px 0 10px;font-weight:500}
+.sb-hero h1 span{color:#E5493F}
+.sb-tagline{font-family:"Fraunces",Georgia,serif;font-size:23px;margin:0 0 20px}
+.sb-intro{font-size:15px;line-height:1.65;max-width:580px;color:#47514C}
+.sb-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px}
+.sb-tags span{border:1px solid var(--line);border-radius:999px;padding:6px 8px;font:600 8px "DM Mono",monospace}
+.sb-hero-visual{position:relative;border-radius:12px;overflow:hidden;background:#111}
+.sb-hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.sb-recon-label{position:absolute;left:12px;bottom:12px;padding:6px 8px;border-radius:999px;background:rgba(18,22,21,.88);color:#fff;font:500 7px "DM Mono",monospace;letter-spacing:.07em}
+.sb-section{padding:52px 0;border-bottom:1px solid var(--line)}
+.sb-section.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center}
+.sb-section.split.reverse{grid-template-columns:1fr 1fr}
+.sb-section.split.reverse .sb-copy{order:2}
+.sb-section.split.reverse .sb-figure{order:1}
+.sb-num{font:600 9px "DM Mono",monospace;letter-spacing:.12em;color:#E5493F;margin-bottom:12px}
+.sb-section h2{font-family:"Fraunces",Georgia,serif;font-size:38px;line-height:1.02;letter-spacing:-.035em;font-weight:500;margin:0 0 16px}
+.sb-copy p,.sb-closing-copy p{font-size:14px;line-height:1.7;color:#4C5651;max-width:680px}
+.sb-figure{margin:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#111}
+.sb-figure img{display:block;width:100%;height:340px;object-fit:cover}
+.sb-figure.compact img{height:280px}
+.sb-figure figcaption,.sb-artifact-grid figcaption{padding:8px 10px;background:#F7F3E9;font:500 7px "DM Mono",monospace;letter-spacing:.07em;color:#626A65}
+.sb-section.dark{background:#17211F;color:#F7F2E8;margin-left:-30px;margin-right:-30px;padding-left:30px;padding-right:30px}
+.sb-section.dark h2{color:#F7F2E8}
+.sb-role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+.sb-role-grid article{border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:16px;background:rgba(255,255,255,.035)}
+.sb-role-grid strong{font-family:"Fraunces",Georgia,serif;font-size:20px;font-weight:500}
+.sb-role-grid p{font-size:12px;line-height:1.55;color:#CBD6D1}
+.sb-section.artifacts>.sb-copy{max-width:720px;margin-bottom:24px}
+.sb-artifact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sb-artifact-grid figure{margin:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#111}
+.sb-artifact-grid figure.wide{grid-column:1/-1}
+.sb-artifact-grid img{display:block;width:100%;height:260px;object-fit:cover}
+.sb-artifact-grid .wide img{height:300px}
+.sb-section.growth{display:grid;grid-template-columns:.65fr 1.35fr;gap:34px}
+.sb-growth-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:center}
+.sb-growth-flow>div{border:1px solid var(--line);border-radius:9px;padding:17px;background:#FAF7F0}
+.sb-growth-flow span{font:600 8px "DM Mono",monospace;color:#E5493F}
+.sb-growth-flow strong{display:block;font-family:"Fraunces",Georgia,serif;font-size:22px;margin:16px 0 6px}
+.sb-growth-flow p{font-size:10px;color:#626B66;margin:0}
+.sb-growth-flow i{font-style:normal;font-size:20px;color:#8B918D}
+.sb-section.closing{display:grid;grid-template-columns:1fr .8fr;gap:30px;align-items:center}
+.sb-disclaimer{margin-top:18px;font-size:10px;line-height:1.55;color:#777D78;max-width:820px}
+@media(max-width:900px){
+  .sb-hero,.sb-section.split,.sb-section.split.reverse,.sb-section.growth,.sb-section.closing{grid-template-columns:1fr}
+  .sb-section.split.reverse .sb-copy,.sb-section.split.reverse .sb-figure{order:initial}
+  .sb-role-grid{grid-template-columns:1fr 1fr}
+  .sb-growth-flow{grid-template-columns:1fr}
+  .sb-growth-flow i{transform:rotate(90deg);text-align:center}
 }
-.case-inline-visual img{
-  display:block;
-  width:100%;
-  height:320px;
-  object-fit:cover;
-}
-.case-visual-caption{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:22px;
-  padding:10px 12px 11px;
-  border-top:1px solid var(--line);
-  background:#F8F5ED;
-}
-.case-visual-caption span{
-  font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:8px;
-  letter-spacing:.09em;
-  color:#D94D43;
-  white-space:nowrap;
-}
-.case-visual-caption p{
-  margin:0;
-  max-width:500px;
-  font-size:10px;
-  line-height:1.45;
-  color:#6A726D;
-  text-align:right;
-}
-.case-reconstruction-note{
-  margin:10px 0 0;
-  max-width:760px;
-  font-size:10px;
-  line-height:1.55;
-  color:#7B7F79;
-}
-
-/* Give different crops slightly different editorial proportions */
-.visual-poster img{height:390px;object-position:center}
-.visual-panel img{height:300px;object-position:center}
-.visual-badges img{height:275px;object-position:center}
-.visual-networking img{height:310px;object-position:center}
-.visual-social img{height:275px;object-position:center}
-.visual-office img{height:300px;object-position:center}
-
-@media(max-width:760px){
-  .case-inline-visual img,
-  .visual-poster img,
-  .visual-panel img,
-  .visual-badges img,
-  .visual-networking img,
-  .visual-social img,
-  .visual-office img{
-    height:auto;
-  }
-  .case-visual-caption{
-    flex-direction:column;
-    gap:5px;
-  }
-  .case-visual-caption p{
-    text-align:left;
-  }
+@media(max-width:600px){
+  .sb-case{padding:20px}
+  .sb-section.dark{margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px}
+  .sb-role-grid,.sb-artifact-grid{grid-template-columns:1fr}
+  .sb-artifact-grid figure.wide{grid-column:auto}
+  .sb-figure img,.sb-artifact-grid img,.sb-artifact-grid .wide img{height:auto}
 }
