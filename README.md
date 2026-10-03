@@ -1,31 +1,23 @@
-# Bryan Lim Portfolio — V1
+# Bryan Lim Portfolio — V2
 
-A static, responsive portfolio site built with plain HTML/CSS/JS.
+This package is designed to replace the files in the existing GitHub/Vercel portfolio repository.
 
-## Files
-- `index.html` — Home
-- `experience.html` — Experience
-- `work.html` — Work / Workspace
-- `about.html` — About
-- `styles.css` — all styling
-- `script.js` — Work-page filters
+## Included
+- `index.html` — revised interactive homepage
+- `experience.html` — existing Experience placeholder
+- `work.html` — revised workspace with three developed projects
+- `about.html` — existing About placeholder
+- `sally.html` — fictional interactive SALLY recreation
+- `dashboard.html` — fictional TA/workforce dashboard sandbox
+- `shopback-connect.html` — reconstructed ShopBack Connect case study
+- `styles.css` — shared portfolio styles
+- `home.js` — homepage interactions
+- `script.js` — legacy work filtering script (safe to leave in repo)
 
-## Preview locally
-Double-click `index.html` or open it in any browser.
+## Deploy to the existing site
+1. In the GitHub repository connected to Vercel, upload/replace these files at the repository root.
+2. Commit the changes.
+3. Vercel should automatically create a new deployment from the commit.
+4. Open `bryanlimwork.vercel.app` after the deployment finishes and hard-refresh if needed.
 
-## Publish with GitHub + Vercel
-1. Create a new GitHub repository named `bryan-portfolio`.
-2. Upload all files from this folder to the repository root.
-3. In Vercel, choose **Add New → Project**.
-4. Import the `bryan-portfolio` GitHub repository.
-5. Framework preset: **Other** (or leave auto-detected).
-6. Build command: leave blank.
-7. Output directory: leave blank.
-8. Click **Deploy**.
-9. Vercel will give you a public `.vercel.app` URL.
-
-## Next content pass
-- Replace placeholder Work cards with real case studies.
-- Add downloadable resume PDF.
-- Add richer About copy.
-- Optional: custom domain later.
+All sandbox/case-study data is fictional or explicitly reconstructed for demonstration purposes.

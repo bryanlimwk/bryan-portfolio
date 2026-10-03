@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TA Dashboard Sandbox</title>
+<style>
+:root{
+  --bg:#f3efe4; --ink:#172321; --muted:#66706a; --line:#d8d2c5;
+  --green:#56725f; --green2:#e7eee8; --card:#fffdf8; --navy:#20303a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px}
+.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}
+.eyebrow{font:700 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:var(--green)}
+h1{font-size:42px;line-height:1.04;margin:9px 0 8px;max-width:780px}
+.sub{max-width:720px;color:var(--muted);line-height:1.6;font-size:14px}
+.demo{max-width:360px;border:1px solid var(--line);background:#faf7ee;padding:14px 15px;border-radius:10px;font-size:11px;line-height:1.5;color:#59625d}
+.demo strong{display:block;color:var(--ink);font:800 10px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;margin-bottom:5px}
+.shell{border:1px solid var(--line);background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 18px 45px rgba(39,50,45,.07)}
+.toolbar{padding:16px 18px;border-bottom:1px solid #e7e2d8;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.tabs{display:flex;gap:6px}
+.tab{border:1px solid #d9d8d1;background:white;border-radius:8px;padding:9px 12px;font-weight:750;font-size:11px;cursor:pointer}
+.tab.active{background:var(--ink);color:white;border-color:var(--ink)}
+.spacer{flex:1}
+select{border:1px solid #d7d6cf;background:white;border-radius:8px;padding:9px 30px 9px 10px;font-size:11px;color:var(--ink)}
+.content{padding:18px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.kpi{border:1px solid #e2ded4;border-radius:10px;padding:14px;background:#fff}
+.kpi .label{font:800 9px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;color:#7e857f}
+.kpi .value{font-size:30px;font-weight:800;margin-top:4px}
+.kpi .note{font-size:10px;color:#7b837e;margin-top:3px}
+.grid{display:grid;grid-template-columns:1.45fr .85fr;gap:14px}
+.panel{border:1px solid #e2ded4;border-radius:10px;background:#fff;overflow:hidden}
+.panel-head{padding:13px 14px;border-bottom:1px solid #ece8df;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.panel-head strong{font-size:12px}.panel-head span{font-size:9px;color:#858b86}
+.table-wrap{overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:10px}
+th{text-align:left;padding:9px 10px;border-bottom:1px solid #ece8df;color:#747c76;font:800 8px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em}
+td{padding:10px;border-bottom:1px solid #f0ede6;vertical-align:middle}
+.status{display:inline-flex;align-items:center;gap:5px;font-weight:700}
+.dot{width:7px;height:7px;border-radius:50%;background:#7b9882}.hold .dot{background:#b9a66b}.filled .dot{background:#627e98}
+.priority{font:800 9px ui-monospace,SFMono-Regular,Menlo,monospace;padding:3px 6px;border-radius:5px;background:#f0f1ee}
+.priority.p0{background:#f5e7e4;color:#8b4337}.priority.p1{background:#f5f0dc;color:#7c6825}.priority.p2{background:#e9eff3;color:#456173}
+.chart{padding:16px}
+.bar-row{margin:12px 0}
+.bar-meta{display:flex;justify-content:space-between;font-size:10px;margin-bottom:5px}
+.bar{height:10px;border-radius:99px;background:#ecebe5;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--green);border-radius:99px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 14px;font-size:9px;color:#707771}
+.legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--green);margin-right:4px}
+.hidden{display:none!important}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.person{padding:14px}
+.person h3{font-size:13px;margin:0 0 3px}.person .role{font-size:9px;color:#7c837e}
+.metric-line{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid #efebe4;font-size:10px}
+.metric-line:first-of-type{margin-top:10px}
+.channel-list{padding:8px 14px 14px}
+.channel-row{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:10px;padding:10px 0;border-bottom:1px solid #efebe4;font-size:10px}
+.channel-row.head{font:800 8px ui-monospace,SFMono-Regular,Menlo,monospace;color:#7d847f;letter-spacing:.06em}
+.footer{margin-top:14px;font-size:10px;color:#777f79;text-align:right}
+@media(max-width:800px){
+  .top{display:block}.demo{margin-top:14px;max-width:none}
+  .kpis{grid-template-columns:repeat(2,1fr)} .grid{grid-template-columns:1fr}
+  .cards3{grid-template-columns:1fr}.toolbar{align-items:stretch}.spacer{display:none}
+}
+</style>
+<style>.portfolio-back{position:relative;z-index:999;display:inline-flex;margin:14px 18px 0;padding:8px 11px;border:1px solid #d8d2c5;border-radius:999px;background:#f3efe4;color:#172321;text-decoration:none;font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}</style></head>
+<body><a class="portfolio-back" href="work.html">← BACK TO WORKSPACE</a>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <div class="eyebrow">INTERACTIVE SANDBOX / FEATURED WORK</div>
+      <h1>TA & Workforce Planning Dashboard</h1>
+      <div class="sub">A simplified recreation of the operating view I built to give Talent Acquisition a live picture of hiring capacity, pipeline health, recruiter performance and channel usage.</div>
+    </div>
+    <div class="demo"><strong>DEMO ENVIRONMENT · FICTIONAL DATA</strong>All roles, recruiters, hiring activity, metrics and company information shown here are fictional and created solely for demonstration purposes. No live company, employee or candidate data is used.</div>
+  </div>
+
+  <div class="shell">
+    <div class="toolbar">
+      <div class="tabs">
+        <button class="tab active" data-view="pipeline">PIPELINE</button>
+        <button class="tab" data-view="performance">PERFORMANCE</button>
+        <button class="tab" data-view="channels">CHANNELS</button>
+      </div>
+      <div class="spacer"></div>
+      <select id="recruiterFilter" aria-label="Recruiter filter">
+        <option value="all">All recruiters</option>
+        <option value="Bryan">Bryan</option>
+        <option value="Gerene">Gerene</option>
+        <option value="Jeremy">Jeremy</option>
+        <option value="Hazel">Hazel</option>
+        <option value="Charms">Charms</option>
+      </select>
+      <select id="priorityFilter" aria-label="Priority filter">
+        <option value="all">All priorities</option>
+        <option value="P0">P0 - Critical</option>
+        <option value="P1">P1 - Urgent</option>
+        <option value="P2">P2 - Medium</option>
+      </select>
+    </div>
+
+    <div class="content">
+      <section id="pipelineView">
+        <div class="kpis">
+          <div class="kpi"><div class="label">ACTIVE HEADCOUNT</div><div class="value" id="kOpen">0</div><div class="note">Current approved / hiring roles</div></div>
+          <div class="kpi"><div class="label">P0 CRITICAL</div><div class="value" id="kP0">0</div><div class="note">Critical searches in flight</div></div>
+          <div class="kpi"><div class="label">AVG. DAYS OPEN</div><div class="value" id="kDays">0</div><div class="note">Across filtered active roles</div></div>
+          <div class="kpi"><div class="label">CAPACITY LOAD</div><div class="value" id="kCapacity">0%</div><div class="note">Illustrative team capacity</div></div>
+        </div>
+        <div class="grid">
+          <div class="panel">
+            <div class="panel-head"><strong>Live hiring plan</strong><span>FICTIONAL HEADCOUNT</span></div>
+            <div class="table-wrap"><table><thead><tr><th>ROLE</th><th>OWNER</th><th>PRIORITY</th><th>STATUS</th><th>DAYS OPEN</th></tr></thead><tbody id="pipelineRows"></tbody></table></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><strong>Capacity by recruiter</strong><span>ACTIVE ROLES</span></div>
+            <div class="chart" id="capacityChart"></div>
+            <div class="legend"><span>Active requisitions</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="performanceView" class="hidden">
+        <div class="kpis">
+          <div class="kpi"><div class="label">FILLED YTD</div><div class="value" id="pFilled">0</div><div class="note">Filtered recruiter view</div></div>
+          <div class="kpi"><div class="label">AVG. TTF</div><div class="value" id="pTTF">0d</div><div class="note">Open → close</div></div>
+          <div class="kpi"><div class="label">AVG. TTH</div><div class="value" id="pTTH">0d</div><div class="note">Candidate entered → close</div></div>
+          <div class="kpi"><div class="label">OFFER ACCEPTANCE</div><div class="value" id="pOffer">0%</div><div class="note">Illustrative performance metric</div></div>
+        </div>
+        <div class="cards3" id="performanceCards"></div>
+      </section>
+
+      <section id="channelsView" class="hidden">
+        <div class="kpis">
+          <div class="kpi"><div class="label">SOURCED SHARE</div><div class="value" id="cSourced">0%</div><div class="note">Of fictional closed hires</div></div>
+          <div class="kpi"><div class="label">INBOUND SHARE</div><div class="value" id="cInbound">0%</div><div class="note">Careers / applications</div></div>
+          <div class="kpi"><div class="label">REFERRAL SHARE</div><div class="value" id="cReferral">0%</div><div class="note">Employee / network referrals</div></div>
+          <div class="kpi"><div class="label">TOP CHANNEL</div><div class="value" id="cTop" style="font-size:19px;margin-top:10px">—</div><div class="note">Highest fictional hires</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><strong>Channel performance</strong><span>FICTIONAL SOURCE DATA</span></div>
+          <div class="channel-list">
+            <div class="channel-row head"><div>CHANNEL</div><div>HIRES</div><div>AVG. TTH</div></div>
+            <div id="channelRows"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="footer">Interactive recreation · no live systems connected</div>
+</div>
+<script>
+const roles=[
+ {role:"Creative Strategist",owner:"Bryan",priority:"P0",status:"Hiring",days:41},
+ {role:"Quality & Regulatory Specialist",owner:"Bryan",priority:"P1",status:"Hiring",days:26},
+ {role:"Creator Partnerships Lead",owner:"Bryan",priority:"P0",status:"Hiring",days:19},
+ {role:"Media Buyer",owner:"Gerene",priority:"P1",status:"Hiring",days:32},
+ {role:"Data Analyst",owner:"Hazel",priority:"P2",status:"On Hold",days:17},
+ {role:"HR Business Partner",owner:"Gerene",priority:"P1",status:"Hiring",days:35},
+ {role:"Senior Copywriter",owner:"Jeremy",priority:"P0",status:"Hiring",days:22},
+ {role:"Marketplace Associate",owner:"Bryan",priority:"P2",status:"Hiring",days:14},
+ {role:"Video Editor",owner:"Charms",priority:"P2",status:"Hiring",days:11}
+];
+const perf={
+ Bryan:{filled:9,ttf:82,tth:49,offer:89},
+ Gerene:{filled:8,ttf:91,tth:53,offer:88},
+ Jeremy:{filled:6,ttf:79,tth:47,offer:87},
+ Hazel:{filled:7,ttf:76,tth:45,offer:90},
+ Charms:{filled:6,ttf:84,tth:50,offer:88}
+};
+const channels=[
+ {name:"LinkedIn Sourcing",type:"sourced",hires:10,tth:46},
+ {name:"Careers Page",type:"inbound",hires:8,tth:51},
+ {name:"Employee Referral",type:"referral",hires:4,tth:38},
+ {name:"Re-engaged Talent",type:"sourced",hires:2,tth:35}
+];
+
+const qs=s=>document.querySelector(s), qsa=s=>[...document.querySelectorAll(s)];
+let view="pipeline";
+function filteredRoles(){
+ const r=qs("#recruiterFilter").value, p=qs("#priorityFilter").value;
+ return roles.filter(x=>(r==="all"||x.owner===r)&&(p==="all"||x.priority===p));
+}
+function renderPipeline(){
+ const d=filteredRoles(), active=d.filter(x=>x.status==="Hiring");
+ qs("#kOpen").textContent=active.length;
+ qs("#kP0").textContent=active.filter(x=>x.priority==="P0").length;
+ qs("#kDays").textContent=active.length?Math.round(active.reduce((a,b)=>a+b.days,0)/active.length):0;
+ qs("#kCapacity").textContent=Math.min(100,Math.round(active.length/7*100))+"%";
+ qs("#pipelineRows").innerHTML=d.map(x=>`<tr><td><strong>${x.role}</strong></td><td>${x.owner}</td><td><span class="priority ${x.priority.toLowerCase()}">${x.priority}</span></td><td><span class="status ${x.status==="On Hold"?"hold":""}"><i class="dot"></i>${x.status}</span></td><td>${x.days}d</td></tr>`).join("");
+ const owners=["Bryan","Gerene","Jeremy","Hazel","Charms"];
+ const counts=owners.map(o=>({o,n:active.filter(x=>x.owner===o).length}));
+ const max=Math.max(1,...counts.map(x=>x.n));
+ qs("#capacityChart").innerHTML=counts.map(x=>`<div class="bar-row"><div class="bar-meta"><span>${x.o}</span><strong>${x.n} active</strong></div><div class="bar"><i style="width:${x.n/max*100}%"></i></div></div>`).join("");
+}
+function selectedPerf(){
+ const r=qs("#recruiterFilter").value;
+ if(r!=="all") return [[r,perf[r]]];
+ return Object.entries(perf);
+}
+function renderPerformance(){
+ const arr=selectedPerf();
+ const sum=k=>Math.round(arr.reduce((a,[,v])=>a+v[k],0)/arr.length);
+ qs("#pFilled").textContent=arr.reduce((a,[,v])=>a+v.filled,0);
+ qs("#pTTF").textContent=sum("ttf")+"d";
+ qs("#pTTH").textContent=sum("tth")+"d";
+ qs("#pOffer").textContent=sum("offer")+"%";
+ qs("#performanceCards").innerHTML=arr.map(([name,v])=>`<div class="panel person"><h3>${name}</h3><div class="role">Fictional recruiter profile</div><div class="metric-line"><span>Filled</span><strong>${v.filled}</strong></div><div class="metric-line"><span>Avg. TTF</span><strong>${v.ttf}d</strong></div><div class="metric-line"><span>Avg. TTH</span><strong>${v.tth}d</strong></div><div class="metric-line"><span>Offer acceptance</span><strong>${v.offer}%</strong></div></div>`).join("");
+}
+function renderChannels(){
+ const total=channels.reduce((a,b)=>a+b.hires,0);
+ const type=t=>channels.filter(x=>x.type===t).reduce((a,b)=>a+b.hires,0);
+ qs("#cSourced").textContent=Math.round(type("sourced")/total*100)+"%";
+ qs("#cInbound").textContent=Math.round(type("inbound")/total*100)+"%";
+ qs("#cReferral").textContent=Math.round(type("referral")/total*100)+"%";
+ const top=[...channels].sort((a,b)=>b.hires-a.hires)[0];
+ qs("#cTop").textContent=top.name;
+ qs("#channelRows").innerHTML=channels.map(x=>`<div class="channel-row"><div><strong>${x.name}</strong></div><div>${x.hires}</div><div>${x.tth}d</div></div>`).join("");
+}
+function showView(v){
+ view=v;
+ ["pipeline","performance","channels"].forEach(x=>qs("#"+x+"View").classList.toggle("hidden",x!==v));
+ qsa(".tab").forEach(b=>b.classList.toggle("active",b.dataset.view===v));
+ renderAll();
+}
+function renderAll(){renderPipeline();renderPerformance();renderChannels()}
+qsa(".tab").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+qs("#recruiterFilter").addEventListener("change",renderAll);
+qs("#priorityFilter").addEventListener("change",renderAll);
+renderAll();
+</script>
+</body>
+</html>
