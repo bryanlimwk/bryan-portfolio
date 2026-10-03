@@ -1,23 +1,19 @@
-# Bryan Lim Portfolio — V2
+# Bryan Lim Portfolio — V3
 
-This package is designed to replace the files in the existing GitHub/Vercel portfolio repository.
+This version redesigns the main portfolio around the approved visual reference:
+- fixed left navigation on desktop
+- warm cream editorial canvas
+- split hero with workspace visual
+- compact career cards
+- richer Featured Work cards
+- interactive curiosity cards
+- redesigned Experience, Work and About pages using the same system
 
-## Included
-- `index.html` — revised interactive homepage
-- `experience.html` — existing Experience placeholder
-- `work.html` — revised workspace with three developed projects
-- `about.html` — existing About placeholder
-- `sally.html` — fictional interactive SALLY recreation
-- `dashboard.html` — fictional TA/workforce dashboard sandbox
-- `shopback-connect.html` — reconstructed ShopBack Connect case study
-- `styles.css` — shared portfolio styles
-- `home.js` — homepage interactions
-- `script.js` — legacy work filtering script (safe to leave in repo)
+Interactive project experiences remain:
+- sally.html
+- dashboard.html
+- shopback-connect.html
 
-## Deploy to the existing site
-1. In the GitHub repository connected to Vercel, upload/replace these files at the repository root.
-2. Commit the changes.
-3. Vercel should automatically create a new deployment from the commit.
-4. Open `bryanlimwork.vercel.app` after the deployment finishes and hard-refresh if needed.
-
-All sandbox/case-study data is fictional or explicitly reconstructed for demonstration purposes.
+## Deploy
+Upload/overwrite all files and the `assets` folder in the existing GitHub repository root.
+Vercel should redeploy automatically.
