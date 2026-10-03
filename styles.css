@@ -592,3 +592,179 @@ body,
     padding-top:16px;
   }
 }
+
+/* V3.15 — balanced Work card visuals */
+.work-demo-preview{
+  min-height:215px;
+  padding:12px;
+  background:#F8F6EF;
+  display:flex;
+  flex-direction:column;
+}
+.preview-toolbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding-bottom:9px;
+  border-bottom:1px solid #E6E1D8;
+  font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:7px;
+  letter-spacing:.06em;
+  color:#6B746F;
+}
+.preview-toolbar b{
+  font-weight:500;
+  color:var(--teal);
+}
+
+/* SALLY */
+.sally-work-preview{
+  background:linear-gradient(145deg,#F6F2FF,#FBFAF6);
+}
+.sally-preview-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.25fr;
+  gap:10px;
+  flex:1;
+  padding-top:11px;
+}
+.sally-preview-steps,
+.sally-preview-score{
+  border:1px solid #E1DCEE;
+  background:rgba(255,255,255,.72);
+  border-radius:7px;
+  padding:10px;
+}
+.preview-step{
+  display:grid;
+  grid-template-columns:22px 1fr;
+  gap:6px;
+  align-items:center;
+  padding:7px 0;
+  border-bottom:1px solid #EEEAF3;
+  font-size:8px;
+  color:#727775;
+}
+.preview-step:last-child{border-bottom:0}
+.preview-step i{
+  width:18px;height:18px;border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid #D4D0DC;
+  font:500 7px "DM Mono",monospace;
+  font-style:normal;
+}
+.preview-step.done i{
+  background:#E7F1EA;border-color:#A9C9B8;color:#356A4F;
+}
+.preview-step.active{
+  color:#3E315F;font-weight:600;
+}
+.preview-step.active i{
+  background:#EEE8FF;border-color:#BFAFF4;color:#6E55D9;
+}
+.score-head{
+  display:flex;justify-content:space-between;gap:8px;
+  font:500 7px "DM Mono",monospace;color:#676E69;
+  margin-bottom:10px;
+}
+.score-head strong{color:#4E3BA0}
+.score-row{
+  display:grid;
+  grid-template-columns:74px 1fr;
+  gap:8px;
+  align-items:center;
+  margin:9px 0;
+  font-size:7px;color:#626963;
+}
+.score-row>div{
+  height:6px;border-radius:999px;background:#ECE9F0;overflow:hidden;
+}
+.score-row i{
+  display:block;height:100%;background:linear-gradient(90deg,#6E55D9,#8D78E8);
+}
+.decision-chip{
+  margin-top:12px;
+  border-radius:5px;
+  background:#EEE9FF;
+  color:#5B46B5;
+  padding:7px 8px;
+  font:600 7px "DM Mono",monospace;
+  text-align:center;
+}
+
+/* Dashboard */
+.dashboard-work-preview{
+  background:linear-gradient(145deg,#ECF5F1,#FBFAF5);
+}
+.dash-preview-kpis{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:6px;
+  padding:11px 0 10px;
+}
+.dash-preview-kpis>div{
+  background:rgba(255,255,255,.76);
+  border:1px solid #D8E5DF;
+  border-radius:6px;
+  padding:8px;
+}
+.dash-preview-kpis strong{
+  display:block;font-family:"Fraunces",Georgia,serif;
+  font-size:18px;font-weight:500;color:var(--teal);
+}
+.dash-preview-kpis span{
+  display:block;font-size:6px;color:#6B736E;margin-top:1px;
+}
+.dash-preview-chart{
+  display:grid;grid-template-columns:1.45fr .8fr;gap:8px;flex:1;
+}
+.dash-bars{
+  min-height:90px;
+  display:flex;align-items:end;gap:8px;
+  border:1px solid #D8E5DF;
+  border-radius:7px;
+  padding:14px 10px 8px;
+  background:rgba(255,255,255,.74);
+}
+.dash-bars i{
+  flex:1;min-width:8px;
+  border-radius:3px 3px 0 0;
+  background:linear-gradient(180deg,#2E705A,#91B9A8);
+}
+.dash-preview-side{
+  display:flex;flex-direction:column;gap:6px;
+}
+.dash-preview-side>div{
+  flex:1;border:1px solid #D8E5DF;border-radius:6px;
+  padding:7px;background:rgba(255,255,255,.74);
+}
+.dash-preview-side span{
+  display:block;font-size:6px;color:#747B76;
+}
+.dash-preview-side strong{
+  display:block;margin-top:3px;
+  font:600 9px "DM Mono",monospace;color:var(--teal);
+}
+
+/* Make all 3 visuals occupy comparable space */
+.work-card .work-visual-block{
+  width:100%;
+}
+.shopback-work-visual img{
+  height:215px;
+  object-fit:cover;
+}
+
+/* Footer still stays aligned below visual */
+.work-card-footer{
+  margin-top:auto;
+}
+
+@media(max-width:900px){
+  .sally-preview-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .sally-preview-grid,
+  .dash-preview-chart{grid-template-columns:1fr}
+  .dash-preview-kpis{grid-template-columns:1fr 1fr}
+  .shopback-work-visual img{height:auto}
+}

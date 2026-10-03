@@ -1,19 +1,13 @@
-# Bryan Lim Portfolio — V3.14 Work Page
+# Bryan Lim Portfolio — V3.15 Balanced Work Cards
 
-Built from V3.13.
+Built from V3.14.
 
-Work page updates:
-- Keeps the locked Home page unchanged.
-- Aligns tags + CTA to the bottom of all three Work cards.
-- SALLY: `TRY SALLY`
-- TA Dashboard: `EXPLORE DASHBOARD`
-- ShopBack Connect: `OPEN CASE STUDY`
-- Adds the approved reconstructed ShopBack Connect visual.
-- Labels the visual clearly as a retrospective reconstruction of the original 2023 event.
-- The reconstruction image is embedded directly in `work.html`, so no assets folder is required.
+Work page changes:
+- Added a real HTML/CSS visual preview to SALLY.
+- Added a real HTML/CSS visual preview to TA Dashboard.
+- Retained the approved reconstructed ShopBack Connect visual.
+- All three project cards now have a comparable visual weight and preview height.
+- Tags + CTA remain bottom-aligned.
+- Home page remains unchanged.
 
-Deploy:
-1. Unzip.
-2. Upload/overwrite all files in the GitHub repository root.
-3. Commit.
-4. Vercel should redeploy automatically.
+No additional assets folder is required.
