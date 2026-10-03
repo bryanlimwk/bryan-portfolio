@@ -1,8 +1,15 @@
-# Bryan Lim Portfolio — V3.3
+# Bryan Lim Portfolio — V3.4 Modern Archive
 
-Small layout refinement:
-- Desktop left navigation widened from 84px to 108px.
-- Slightly increased sidebar horizontal padding.
-- Gives longer labels such as Experience more breathing room from the divider.
+Locked colour direction: Modern Archive.
 
-All V3.2 fixes and project experiences are preserved.
+This update changes colour only. Typography sizing is intentionally left for the next review.
+
+Palette:
+- Warm cream
+- Ink
+- Deep teal
+- Forest
+- Mustard
+- Project accents: violet for SALLY, teal/mint for TA Dashboard, warm orange for ShopBack Connect
+
+Upload/overwrite all files in the existing GitHub repository root and commit. Vercel should redeploy automatically.
