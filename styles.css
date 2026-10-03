@@ -532,3 +532,63 @@ body,
     width:100%;
   }
 }
+
+/* V3.14 — Work page alignment + ShopBack Connect reconstructed visual */
+.work-v2-grid{
+  align-items:stretch;
+}
+.work-card{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+}
+.work-card-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+.work-card-footer{
+  margin-top:auto;
+  padding-top:18px;
+}
+.work-card-footer .tags{
+  margin:0 0 16px;
+}
+.work-card-footer>a{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+}
+.work-visual-block{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  overflow:hidden;
+  background:#F7F4EB;
+}
+.work-visual-block img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.shopback-work-visual{
+  position:relative;
+}
+.reconstruction-label{
+  position:absolute;
+  left:10px;
+  bottom:10px;
+  background:rgba(21,32,30,.88);
+  color:#F8F4EA;
+  border-radius:999px;
+  padding:5px 8px;
+  font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:7px;
+  letter-spacing:.06em;
+  line-height:1;
+}
+@media(max-width:900px){
+  .work-card-footer{
+    padding-top:16px;
+  }
+}
