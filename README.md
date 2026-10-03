@@ -1,15 +1,20 @@
-# Bryan Lim Portfolio — V3.4 Modern Archive
+# Bryan Lim Portfolio — V3.5 Typography Pass
 
-Locked colour direction: Modern Archive.
+Built on the locked V3.4 Modern Archive colour direction.
 
-This update changes colour only. Typography sizing is intentionally left for the next review.
+This pass increases the lower end of the typography scale while preserving the large hero/page headlines.
 
-Palette:
-- Warm cream
-- Ink
-- Deep teal
-- Forest
-- Mustard
-- Project accents: violet for SALLY, teal/mint for TA Dashboard, warm orange for ShopBack Connect
+Key changes:
+- Hero body: 13px -> 16px
+- Main body copy: generally 14-16px
+- Career card copy: 10px -> 14px
+- Featured Work descriptions: 11px -> 14px
+- Curiosity descriptions: 9px -> 13px
+- Navigation: 11px -> 13px
+- Buttons: 10px -> 12px
+- Section headings: 18px -> 23px
+- Career company names: 14px -> 18px
+- Featured project names: 20px -> 25px
+- Metadata remains intentionally smaller.
 
-Upload/overwrite all files in the existing GitHub repository root and commit. Vercel should redeploy automatically.
+Upload/overwrite all files in your existing GitHub repository root and commit.
