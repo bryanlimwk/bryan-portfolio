@@ -830,3 +830,57 @@ body,
   .sb-artifact-grid figure.wide{grid-column:auto}
   .sb-figure img,.sb-artifact-grid img,.sb-artifact-grid .wide img{height:auto}
 }
+
+/* V3.21 — Experience page evergreen header + company identity */
+.chapter-meta{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+.chapter-company-media{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:18px;
+}
+.chapter-company-media img{
+  width:82px;
+  height:82px;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.linkedin-company-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:30px;
+  padding:0 10px;
+  border:1px solid var(--teal);
+  border-radius:6px;
+  color:var(--teal);
+  background:transparent;
+  font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.04em;
+  transition:background .18s ease,color .18s ease,transform .18s ease;
+}
+.linkedin-company-btn:hover{
+  background:var(--teal);
+  color:#F4F0E6;
+  transform:translateY(-1px);
+}
+@media(max-width:900px){
+  .chapter-company-media{
+    flex-direction:row;
+    align-items:center;
+  }
+  .chapter-company-media img{
+    width:70px;
+    height:70px;
+  }
+}
