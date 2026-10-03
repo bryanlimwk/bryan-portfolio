@@ -1,11 +1,18 @@
-# Bryan Lim Portfolio — V3.17 ShopBack Visual Fix
+# Bryan Lim Portfolio — V3.18 ShopBack Distributed Visuals
 
-Fixes the repeated-KV issue from V3.16.
+This replaces the previous full-collage + repeated-crop approach.
 
 Changes:
-- Keeps the full reconstructed ShopBack Connect KV only once near the top.
-- Replaces repeated copies with two genuinely different image crops extracted from the approved reconstruction.
-- Crop 1 focuses on panel-talk / event signage.
-- Crop 2 focuses on badges / networking / event collateral.
-- Keeps the retrospective-reconstruction disclaimer.
-- No assets folder required; all visuals are embedded.
+- Removes the full reconstruction collage from the case-study flow.
+- Breaks the approved reconstructed KV into distinct visual artifacts.
+- Distributes those artifacts across the existing case-study sections.
+- Uses separate visuals for:
+  - reconstructed key visual
+  - panel talk / venue signage
+  - badges / check-in collateral
+  - networking / employee conversations
+  - social / employer-brand recap
+  - ShopBack Campus / office environment
+- Keeps one clear reconstruction disclaimer near the first visual.
+- Existing case-study copy is preserved.
+- No assets folder required; all images are embedded.
