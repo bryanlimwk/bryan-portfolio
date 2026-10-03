@@ -1,17 +1,28 @@
-# Bryan Lim Portfolio — V3.7 Typography Prototype
+# Bryan Lim Portfolio — V3.8 Classic Meets Tech
 
-Built on V3.6 Builder Hero.
+Built from the agreed Builder Hero / Modern Archive direction.
 
-Typography prototype:
-- Space Grotesk — hero, major headings, card titles and display text
-- DM Sans — body copy, supporting copy and general interface text
-- System monospace — metadata, labels, buttons, code/system language
-- Handwritten builder note retains a lightweight handwriting fallback
+This version intentionally changes typography only.
 
-Hero hierarchy:
-- “I started in Talent Acquisition.” uses heavier Space Grotesk
-- “My curiosity didn't stop there.” uses a lighter Space Grotesk weight in deep teal
+Typography system:
+- Fraunces — hero, page titles, company/project titles, narrative headings
+- Inter — body copy and readable interface text
+- DM Mono — navigation, metadata, buttons, labels and system/technical language
+- Lightweight handwriting fallback for the builder-note element
 
-This version loads Space Grotesk and DM Sans from Google Fonts, with system fallbacks.
+Preserved:
+- Modern Archive cream / teal / forest / mustard palette
+- Left sidebar navigation
+- Builder-canvas hero
+- Current font sizing from the typography pass
+- Career cards
+- Featured Work structure and project colours
+- Curiosity section
+- Dark teal closing section
+- SALLY, Dashboard and ShopBack Connect project pages
 
-Deploy by uploading/overwriting the files in the existing GitHub repository root.
+Deploy:
+1. Unzip.
+2. Upload/overwrite all files in the existing GitHub repository root.
+3. Commit.
+4. Vercel should redeploy automatically.
