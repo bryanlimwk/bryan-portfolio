@@ -1,19 +1,14 @@
-# Bryan Lim Portfolio — V3.19 ShopBack Connect Final Case Study
+# Bryan Lim Portfolio — V3.20 ShopBack Self-Contained Fix
 
-Built from V3.15.
+Fixes the V3.19 rendering issue.
 
-Changes:
-- Rebuilds the ShopBack Connect page around the approved visual direction.
-- Uses distinct reconstructed visuals throughout the page.
-- Avoids unverified AI-generated event metrics, dates and claims.
-- Keeps only confirmed story points:
-  - 0→1 employer-brand event
-  - held at ShopBack Campus
-  - fresh-graduate / early-career audience
-  - Bryan owned concept, stakeholder pitch, programme, prep, marketing, emcee/event delivery
-  - format expanded from Commercial to Engineering
-  - later extended to Product after Bryan left
-- Adds a clear retrospective reconstruction disclaimer.
-- No assets folder required; all visuals are embedded directly.
+Root cause:
+- `shopback-connect.html` was a legacy standalone page with its own inline stylesheet.
+- The new V3.19 ShopBack classes were only added to the shared `styles.css`, but the page does not load that stylesheet.
+- Result: the new HTML rendered almost unstyled.
 
-Deploy by uploading/overwriting the files in the existing GitHub repo root.
+Fix:
+- Added the complete ShopBack Connect case-study styles directly into `shopback-connect.html`.
+- Removed the obsolete legacy interaction script.
+- No dependency on the shared stylesheet for the case-study layout.
+- Preserves the approved visual direction and reconstructed imagery.
