@@ -1,9 +1,10 @@
-# Bryan Lim Portfolio — V3.24 About Alignment
+# Bryan Lim Portfolio — V3.25 New Resume
 
-Built from V3.23.
+Built from V3.24.
 
-Update:
-- Repositions “SAME CURIOSITY / DIFFERENT CONTEXTS” directly beneath the final About intro paragraph.
-- Keeps it aligned toward the right edge of the text column.
-- Reduces the rotation and size slightly so it reads as an intentional closing annotation rather than a floating element.
-- All V3.23 fixes, including Download CV, are preserved.
+Updates:
+- Replaces the embedded CV on the Home page with Bryan's latest resume.
+- Replaces the embedded CV on the About page with the same latest resume.
+- The latest resume includes the live portfolio URL: bryanlimwork.vercel.app.
+- No design/layout changes were made to the settled website pages.
+- No external PDF/assets folder is required; the CV remains embedded directly in HTML.
