@@ -1,11 +1,10 @@
-# Bryan Lim Portfolio — V3.22 About Page
+# Bryan Lim Portfolio — V3.23 About Fixes
 
-Built from V3.21.
+Built from V3.22.
 
-Updates:
-- Rebuilds About as a simpler, personal editorial page.
-- Removes the old pinboard / Pokémon-specific content.
-- Adds short personal introduction, four concise personal metadata cards, and a dark contact close.
-- Uses the approved Singapore/workspace visual direction.
-- LinkedIn and visible email CTAs included.
-- Experience page from V3.21 and all prior approved pages are preserved.
+Fixes:
+- Removes the duplicate “People / Ideas / Systems / Places” HTML overlay from the About hero image.
+- The handwritten text already baked into the approved visual remains.
+- Adds a third `DOWNLOAD CV` button after LinkedIn and email in the Say hello section.
+- Uses Bryan's latest uploaded resume.
+- Resume is embedded directly into about.html; no additional PDF/assets folder is required.

@@ -896,8 +896,7 @@ body,
 .about-scribble span,.contact-thought span{display:block;width:76px;height:3px;background:#EE493F;transform:rotate(-10deg);margin:6px 0 0 28px}
 .about-photo{position:relative;border-radius:10px;overflow:hidden;min-height:660px;background:#ddd}
 .about-photo img{width:100%;height:100%;object-fit:cover}
-.about-photo-note{position:absolute;right:30px;top:90px;transform:rotate(-7deg);font-family:"DM Mono",monospace;font-size:15px;font-weight:600;line-height:1.25;color:#17211F}
-.about-photo-note b{color:#EE493F;font-size:22px}
+
 .about-facts{padding:46px 0 52px;border-top:1px solid var(--line)}
 .fact-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .fact-grid article{padding:0 34px;border-right:1px solid var(--line);min-height:235px}
@@ -924,4 +923,9 @@ body,
 @media(max-width:560px){
  .about-v322{padding:20px}.about-copy h1{font-size:46px}.about-photo{min-height:390px}
  .fact-grid{grid-template-columns:1fr}.about-contact{padding:28px 22px}.about-actions{flex-direction:column}
+}
+
+/* V3.23 — About fixes */
+.about-actions .about-cv-btn{
+  border-color:#DDE3DF;
 }
