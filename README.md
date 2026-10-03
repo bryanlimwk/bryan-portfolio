@@ -1,10 +1,8 @@
-# Bryan Lim Portfolio — V3.2
+# Bryan Lim Portfolio — V3.3
 
-Fixes:
-- Removed duplicate handwritten text overlays from the Home hero image.
-- Rebuilt the ShopBack Connect Featured Work preview so typography fits cleanly.
-- Keeps embedded homepage visuals, so no separate assets folder is required.
-- SALLY, TA Dashboard, ShopBack Connect case study, Experience, Work and About pages remain included.
+Small layout refinement:
+- Desktop left navigation widened from 84px to 108px.
+- Slightly increased sidebar horizontal padding.
+- Gives longer labels such as Experience more breathing room from the divider.
 
-## Deploy
-Upload/overwrite all files in the existing GitHub repository root, commit, and let Vercel redeploy.
+All V3.2 fixes and project experiences are preserved.
