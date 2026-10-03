@@ -1,12 +1,17 @@
-# Bryan Lim Portfolio — V3.6 Builder Hero
+# Bryan Lim Portfolio — V3.7 Typography Prototype
 
-Built on V3.5 typography and Modern Archive colours.
+Built on V3.6 Builder Hero.
 
-Changes:
-- New hero headline: “I started in Talent Acquisition. My curiosity didn't stop there.”
-- Hero copy rewritten to avoid repetition.
-- Replaces the hero photograph with a startup-tech builder canvas built entirely in HTML/CSS.
-- Keeps the left sidebar and the rest of the site structure.
-- Uses SALLY, systems, data visibility and People/Business/Systems/AI as visual motifs without turning the page into a product landing page.
+Typography prototype:
+- Space Grotesk — hero, major headings, card titles and display text
+- DM Sans — body copy, supporting copy and general interface text
+- System monospace — metadata, labels, buttons, code/system language
+- Handwritten builder note retains a lightweight handwriting fallback
+
+Hero hierarchy:
+- “I started in Talent Acquisition.” uses heavier Space Grotesk
+- “My curiosity didn't stop there.” uses a lighter Space Grotesk weight in deep teal
+
+This version loads Space Grotesk and DM Sans from Google Fonts, with system fallbacks.
 
 Deploy by uploading/overwriting the files in the existing GitHub repository root.
