@@ -929,3 +929,26 @@ body,
 .about-actions .about-cv-btn{
   border-color:#DDE3DF;
 }
+
+/* V3.24 — About hero annotation alignment */
+.about-scribble{
+  width:max-content;
+  margin:8px 12px 0 auto;
+  transform:rotate(-4deg);
+  font-family:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;
+  line-height:1.08;
+  font-weight:600;
+  position:relative;
+}
+.about-scribble span{
+  width:70px;
+  height:3px;
+  margin:5px 0 0 24px;
+  transform:rotate(-8deg);
+}
+@media(max-width:900px){
+  .about-scribble{
+    margin:8px 0 0 auto;
+  }
+}
