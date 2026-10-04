@@ -21,3 +21,11 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - The current page is shown in a rounded cream pill with stronger contrast, a subtle shadow and a small status dot.
 - Inactive links gain a light hover pill and slight horizontal movement so they read clearly as clickable navigation.
 - SALLY demo content and all project pages remain otherwise unchanged.
+
+
+## V3.31 — Sidebar Fix
+- Replaces the cramped ~95px cream navigation treatment with a coherent 190px dark-teal sidebar.
+- Removes the old divider beneath `B.` completely.
+- Home / Work / Experience / About are now full rounded navigation rows.
+- Current page uses a cream raised pill; inactive pages use subtle translucent rows and stronger hover feedback.
+- Only the website sidebar/navigation is changed. Existing Home, Work, Experience and About page content remains intact.
