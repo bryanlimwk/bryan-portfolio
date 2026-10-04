@@ -1,12 +1,11 @@
-# Bryan Lim Portfolio — V3.27 SALLY Transcript
+# Bryan Lim Portfolio — V3.28 SALLY Scorecard Drawer
 
-Built from V3.26.
+Built from V3.27.
 
-SALLY demo update:
-- Replaces bucket-summary cards with a realistic fictional recruiter-screen transcript.
-- Shows Bryan's recruiter question followed by Alex Morgan's candidate answer.
-- Each exchange is tagged to its relevant evaluation bucket.
-- Exchanges fade in sequentially.
-- Keeps the conversational Run SALLY Evaluation experience from V3.26.
-- Spar / Decide / Submit stages remain unchanged.
-- All candidate information remains explicitly fictional/demo-only.
+- Adds a persistent `VIEW SCORECARD` button throughout the SALLY demo.
+- Opens a right-side drawer without leaving the current workflow step.
+- Uses a fictional 6-competency Creative Strategist scorecard created for the public portfolio demo.
+- Explicitly states that it is not Maneuver Marketing's internal scorecard.
+- Ratings are blank before evaluation.
+- After `Run SALLY Evaluation`, the same scorecard populates with demo ratings and evidence notes.
+- Transcript, Spar, Decide and Submit flows are otherwise preserved.
