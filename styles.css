@@ -1096,3 +1096,33 @@ body,
   width:6px;
   height:6px;
 }
+
+/* V3.37 — iOS-style active tab highlight, no green dots */
+.side-nav nav a::before{
+  content:none !important;
+  display:none !important;
+}
+
+.side-nav nav a{
+  border:1px solid transparent;
+  border-radius:999px;
+}
+
+.side-nav nav a.active{
+  background:#FBF7EE !important;
+  color:#13201D !important;
+  border:1px solid rgba(19,32,29,.18) !important;
+  border-radius:999px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.85),
+    0 4px 10px rgba(21,32,30,.08) !important;
+  font-weight:600 !important;
+  padding-left:12px !important;
+  padding-right:12px !important;
+}
+
+.side-nav nav a:not(.active):hover{
+  background:rgba(15,77,74,.045) !important;
+  border-color:rgba(15,77,74,.08) !important;
+  transform:translateX(2px);
+}

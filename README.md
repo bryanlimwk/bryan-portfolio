@@ -46,3 +46,10 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - Divider moves further right so `Experience` no longer touches it.
 - Active dot alignment and selected-pill styling are preserved.
 - Main page margin continues to follow the same sidebar variable, preventing overlap.
+
+
+## V3.37 — iOS-style Active Tab
+- Removes green status dots from the main navigation.
+- Active page now uses a rounded highlighted border around the word, inspired by iPhone toggle/selection styling.
+- Adds subtle fill plus inner/outer shadow so the active tab feels selected without looking bulky.
+- Sidebar width from V3.36 is preserved.
