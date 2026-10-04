@@ -29,3 +29,12 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - Home / Work / Experience / About are now full rounded navigation rows.
 - Current page uses a cream raised pill; inactive pages use subtle translucent rows and stronger hover feedback.
 - Only the website sidebar/navigation is changed. Existing Home, Work, Experience and About page content remains intact.
+
+
+## V3.32 — Compact Navigation Fix
+- Fixes the homepage overlap introduced by the 190px sidebar.
+- Restores the sidebar to a 96px footprint so the existing page layout keeps its original width.
+- Retains the dark-teal navigation treatment and obvious rounded clickable buttons.
+- Active page remains cream with a green indicator.
+- Removes all legacy divider lines around the B. brand.
+- Adds explicit grid/page width rules so the sidebar cannot sit on top of the main content.
