@@ -38,6 +38,77 @@
 .slack-ui{background:#fff}.slack-top{display:grid;grid-template-columns:190px 1fr;min-height:430px}.slack-sidebar{background:#3f164d;color:white;padding:16px 13px}.slack-workspace{font-size:14px;font-weight:800;padding:3px 6px 14px;border-bottom:1px solid rgba(255,255,255,.16)}.slack-nav{font-size:10px;opacity:.8;margin-top:14px}.slack-channel{font-size:11px;padding:6px 7px;border-radius:5px;margin-top:3px}.slack-channel.active{background:rgba(255,255,255,.18);font-weight:700}.slack-main{min-width:0}.slack-channel-head{height:52px;padding:9px 16px;border-bottom:1px solid #e8e8e5}.slack-channel-head strong{display:block;font-size:13px}.slack-channel-head span{font-size:9px;color:#808580}.slack-message{display:grid;grid-template-columns:38px 1fr;gap:10px;padding:20px 17px}.sally-avatar{width:36px;height:36px;border-radius:7px;display:grid;place-items:center;background:#dce9de;color:#285037;font-weight:900}.msg-meta{font-size:11px;margin-bottom:7px}.msg-meta strong{font-size:12px}.msg-meta span{font-size:9px;color:#888;margin-left:6px}.msg-body{font-size:10px;line-height:1.58;color:#363b38}.msg-title{font-size:12px;font-weight:800;margin-bottom:7px}.msg-section{margin-top:12px}.msg-label{font-size:9px;font-weight:900;letter-spacing:.08em;color:#5f665f;margin-bottom:3px}.msg-body ul{margin:4px 0 0 17px;padding:0}.msg-body li{margin:3px 0}.demo-watermark{font-size:9px;letter-spacing:.1em;font-weight:800;color:#8b918c}
 @media(max-width:720px){.ashby-body,.slack-top{grid-template-columns:1fr}.ashby-sidebar,.slack-sidebar{display:none}}
 
+
+/* V5 conversational evaluation */
+.transcript-fade{
+  opacity:0;
+  transform:translateY(14px);
+  animation:transcriptFade .48s ease forwards;
+  animation-delay:var(--quote-delay,0s);
+}
+@keyframes transcriptFade{
+  to{opacity:1;transform:translateY(0)}
+}
+
+.eval-conversation{display:flex;flex-direction:column;gap:14px}
+.eval-bubble{max-width:72%;padding:13px 15px;border-radius:15px;box-shadow:0 8px 22px rgba(30,42,53,.06)}
+.recruiter-message{align-self:flex-end;background:var(--navy);color:white;border-bottom-right-radius:4px;min-width:340px}
+.bubble-name{display:block;margin-bottom:6px;font:600 9px "IBM Plex Mono",monospace;letter-spacing:.08em;opacity:.68}
+.recruiter-message p{margin:0;font-size:14px;line-height:1.5}
+.typing-dots{display:inline-flex;gap:4px;align-items:center;height:20px}
+.typing-dots i{display:block;width:5px;height:5px;border-radius:50%;background:#d8dee4;animation:typingDot .9s infinite ease-in-out}
+.typing-dots i:nth-child(2){animation-delay:.14s}
+.typing-dots i:nth-child(3){animation-delay:.28s}
+@keyframes typingDot{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+
+.eval-conversation .processing{margin:4px 0 6px;gap:8px}
+.eval-conversation .process-line{
+  opacity:0;
+  transform:translateY(7px);
+  width:max-content;
+  max-width:86%;
+  padding:9px 12px;
+  border:1px solid #ced9d0;
+  border-radius:11px;
+  background:#eef4ef;
+  color:#627069;
+  transition:opacity .32s ease,transform .32s ease,color .2s ease;
+}
+.eval-conversation .process-line.complete{
+  opacity:1;
+  transform:translateY(0);
+  color:var(--green);
+}
+.conversational-scores{gap:10px}
+.score-bubble{
+  width:min(720px,88%);
+  border-radius:14px 14px 14px 4px;
+  background:#f4f0fb;
+  border-color:#dcd3ea;
+  opacity:0;
+  transform:translateY(9px);
+  animation:scoreBubbleIn .46s ease forwards;
+}
+.score-bubble:nth-child(1){animation-delay:.08s}
+.score-bubble:nth-child(2){animation-delay:.32s}
+.score-bubble:nth-child(3){animation-delay:.56s}
+@keyframes scoreBubbleIn{to{opacity:1;transform:translateY(0)}}
+.score-bubble .bubble-name{color:#69558d}
+.score-bubble .score{color:#69558d}
+.eval-summary-bubble{
+  width:min(650px,84%);
+  margin-top:10px;
+  padding:14px 16px;
+  border-radius:14px 14px 14px 4px;
+  border:1px solid #c8d5c8;
+  background:var(--green-soft);
+}
+.eval-summary-bubble p{margin:0;font-size:13px;line-height:1.6}
+@media(max-width:720px){
+  .eval-bubble,.score-bubble,.eval-summary-bubble{max-width:96%;width:96%}
+  .recruiter-message{min-width:0}
+}
+
 </style>
 <style>.portfolio-back{position:relative;z-index:999;display:inline-flex;margin:14px 18px 0;padding:8px 11px;border:1px solid #d8d2c5;border-radius:999px;background:#f3efe4;color:#172321;text-decoration:none;font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}</style></head>
 <body><a class="portfolio-back" href="work.html">← BACK TO WORKSPACE</a>
@@ -54,24 +125,66 @@
 <div class="panel-head"><h2>Recruiter screen complete</h2><span class="pill green">FICTIONAL CANDIDATE · DEMO DATA</span></div>
 <div class="grid"><aside class="side"><p class="eyebrow">Candidate</p><div class="candidate-name">Alex Morgan</div><div class="sub">Creative Strategist · Fictional demo profile</div><div class="facts"><div class="fact"><b>INTERVIEW</b><span>Recruiter Screen · 42 min</span></div><div class="fact"><b>LOCATION</b><span>London, UK</span></div><div class="fact"><b>EXPERIENCE</b><span>4 years · DTC / agency mix</span></div><div class="fact"><b>STATUS</b><span>Awaiting evaluation</span></div></div><span class="pill">NO REAL PERSON OR ROLE</span></aside>
 <div class="main"><p class="eyebrow">Full fictional recruiter-screen transcript</p><p class="transcript-note">For this demo, SALLY evaluates the full transcript below as one evidence set — not hand-picked excerpts. The transcript is shortened only to keep the public demo readable.</p><div class="transcript">
-<div class="quote"><b>MOTIVATION</b><p>“I’m looking for a role where I can own more of the thinking behind creative, not just receive a brief and execute it. I like being close to performance data and understanding why something worked.”</p></div>
-<div class="quote"><b>RESEARCH PROCESS</b><p>“I usually start with reviews, Reddit, competitor ads and customer comments. I group recurring phrases into themes, then build concepts around the ones that come up most.”</p></div>
-<div class="quote"><b>INSIGHT EXAMPLE</b><p>“On one skincare account, customers kept saying they were tired of ‘starting over’. The repeated language was less about wanting a dramatic transformation and more about wanting something they could actually stick with, so we built a campaign around consistency.”</p></div>
-<div class="quote"><b>CREATIVE DEVELOPMENT</b><p>“Once I have the angle, I’ll usually map a few different ways into it — problem-led, belief-led, testimonial, or demonstration — so we’re testing the idea and not just one execution.”</p></div>
-<div class="quote"><b>TESTING</b><p>“I normally test three or four hooks around a concept first. If the hook gets attention but the ad drops later, I’ll usually change the body or proof rather than kill the whole concept.”</p></div>
-<div class="quote"><b>PERFORMANCE DIAGNOSIS</b><p>“I try not to call something a bad concept too quickly. If CTR is healthy but hold rate drops, that tells me something different from an ad that never earns attention in the first place.”</p></div>
-<div class="quote"><b>STAKEHOLDER WORKING STYLE</b><p>“I’m comfortable defending an idea, but I also want media buyers and editors to challenge it. Usually the best version comes from being specific about what we are trying to learn from the test.”</p></div>
-<div class="quote"><b>GAP / SUPPLEMENTS</b><p>“I haven’t worked directly in supplements. Most of my experience is skincare and beauty, so I’d need to get up to speed on claims, compliance boundaries and the customer objections in this category.”</p></div>
+<div class="quote transcript-fade" style="--quote-delay:0.00s"><b>MOTIVATION</b><p>“I’m looking for a role where I can own more of the thinking behind creative, not just receive a brief and execute it. I like being close to performance data and understanding why something worked.”</p></div>
+<div class="quote transcript-fade" style="--quote-delay:0.12s"><b>RESEARCH PROCESS</b><p>“I usually start with reviews, Reddit, competitor ads and customer comments. I group recurring phrases into themes, then build concepts around the ones that come up most.”</p></div>
+<div class="quote transcript-fade" style="--quote-delay:0.24s"><b>INSIGHT EXAMPLE</b><p>“On one skincare account, customers kept saying they were tired of ‘starting over’. The repeated language was less about wanting a dramatic transformation and more about wanting something they could actually stick with, so we built a campaign around consistency.”</p></div>
+<div class="quote transcript-fade" style="--quote-delay:0.36s"><b>CREATIVE DEVELOPMENT</b><p>“Once I have the angle, I’ll usually map a few different ways into it — problem-led, belief-led, testimonial, or demonstration — so we’re testing the idea and not just one execution.”</p></div>
+<div class="quote transcript-fade" style="--quote-delay:0.48s"><b>TESTING</b><p>“I normally test three or four hooks around a concept first. If the hook gets attention but the ad drops later, I’ll usually change the body or proof rather than kill the whole concept.”</p></div>
+<div class="quote transcript-fade" style="--quote-delay:0.60s"><b>PERFORMANCE DIAGNOSIS</b><p>“I try not to call something a bad concept too quickly. If CTR is healthy but hold rate drops, that tells me something different from an ad that never earns attention in the first place.”</p></div>
+<div class="quote transcript-fade" style="--quote-delay:0.72s"><b>STAKEHOLDER WORKING STYLE</b><p>“I’m comfortable defending an idea, but I also want media buyers and editors to challenge it. Usually the best version comes from being specific about what we are trying to learn from the test.”</p></div>
+<div class="quote transcript-fade" style="--quote-delay:0.84s"><b>GAP / SUPPLEMENTS</b><p>“I haven’t worked directly in supplements. Most of my experience is skincare and beauty, so I’d need to get up to speed on claims, compliance boundaries and the customer objections in this category.”</p></div>
 </div><div class="actions"><button class="btn green" id="runEval">RUN SALLY EVALUATION →</button></div></div></div>
 </section>
 
 <section class="panel stage hidden" id="stage2">
-<div class="panel-head"><h2>SALLY evaluation</h2><span class="pill">SIMULATED ANALYSIS</span></div><div class="main"><div class="processing" id="processing"><div class="process-line"><span class="dot"></span>Reading full interview transcript...</div><div class="process-line"><span class="dot"></span>Matching evidence to scorecard...</div><div class="process-line"><span class="dot"></span>Identifying evidence gaps...</div><div class="process-line"><span class="dot"></span>Generating structured evaluation...</div></div>
-<div id="results" class="hidden"><div class="scorecards">
-<article class="scorecard"><div class="score-top"><h3>Research → Insight Development</h3><span class="score">3 / 5</span></div><p>Uses multiple sources and can identify recurring customer language, but the interview provides limited evidence of consistently converting research into deeper, non-obvious customer insight.</p><div class="evidence">Evidence: reviews + Reddit + competitor research; “starting over” example showed useful synthesis, but only one detailed example was provided.</div></article>
-<article class="scorecard"><div class="score-top"><h3>Creative Strategy & Testing</h3><span class="score">4 / 5</span></div><p>Demonstrates structured hypothesis testing and can distinguish hook failure from downstream creative failure rather than treating the ad as one undifferentiated result.</p><div class="evidence">Evidence: tests multiple hooks first; adjusts body/proof when attention is strong but retention drops.</div></article>
-<article class="scorecard"><div class="score-top"><h3>Category Transferability</h3><span class="score">3 / 5</span></div><p>Relevant DTC experience is transferable, but direct supplements exposure is absent and the candidate openly acknowledges a learning curve around claims and category-specific objections.</p><div class="evidence">Evidence: skincare/beauty background; no supplements experience.</div></article>
-</div><div class="actions"><button class="btn green" id="goSpar">SPAR WITH SALLY →</button><button class="btn secondary" id="back1">← BACK TO INTERVIEW</button></div></div></div>
+<div class="panel-head"><h2>SALLY evaluation</h2><span class="pill">SIMULATED ANALYSIS</span></div>
+<div class="main">
+  <div class="eval-conversation">
+    <div class="eval-bubble recruiter-message">
+      <span class="bubble-name">BRYAN</span>
+      <p id="typedRequest"><span class="typing-dots"><i></i><i></i><i></i></span></p>
+    </div>
+
+    <div class="processing" id="processing">
+      <div class="process-line"><span class="dot"></span>Reading full interview transcript...</div>
+      <div class="process-line"><span class="dot"></span>Matching evidence to scorecard...</div>
+      <div class="process-line"><span class="dot"></span>Identifying evidence gaps...</div>
+      <div class="process-line"><span class="dot"></span>Generating structured evaluation...</div>
+    </div>
+
+    <div id="results" class="hidden">
+      <div class="scorecards conversational-scores">
+        <article class="scorecard score-bubble">
+          <div class="bubble-name">SALLY</div>
+          <div class="score-top"><h3>Research → Insight Development</h3><span class="score">3 / 5</span></div>
+          <p>Structured research process with useful synthesis, but only one detailed example of turning research into deeper customer insight.</p>
+          <div class="evidence">Evidence: reviews + Reddit + competitor research; “starting over” example showed useful synthesis.</div>
+        </article>
+
+        <article class="scorecard score-bubble">
+          <div class="bubble-name">SALLY</div>
+          <div class="score-top"><h3>Creative Strategy &amp; Testing</h3><span class="score">4 / 5</span></div>
+          <p>Clear hypothesis-testing logic and good diagnosis of hook failure versus downstream creative failure.</p>
+          <div class="evidence">Evidence: tests multiple hooks first; adjusts body/proof when attention is strong but retention drops.</div>
+        </article>
+
+        <article class="scorecard score-bubble">
+          <div class="bubble-name">SALLY</div>
+          <div class="score-top"><h3>Category Transferability</h3><span class="score">3 / 5</span></div>
+          <p>Relevant DTC experience is transferable, but supplements-category fluency is still unproven.</p>
+          <div class="evidence">Evidence: skincare/beauty background; no direct supplements experience.</div>
+        </article>
+      </div>
+
+      <div class="eval-summary-bubble">
+        <span class="bubble-name">SALLY</span>
+        <p><strong>Initial read:</strong> Enough evidence to continue, with research depth and supplements transferability best tested in the next stage.</p>
+      </div>
+
+      <div class="actions"><button class="btn green" id="goSpar">SPAR WITH SALLY →</button><button class="btn secondary" id="back1">← BACK TO INTERVIEW</button></div>
+    </div>
+  </div>
+</div>
 </section>
 
 <section class="panel stage hidden" id="stage3"><div class="panel-head"><h2>Ask SALLY</h2><span class="pill">PRE-WRITTEN DEMO RESPONSES</span></div><div class="main"><div class="spar-grid"><div class="prompt-list">
@@ -142,7 +255,7 @@
 <footer class="footer-note"><strong class="mono">ABOUT THIS PROTOTYPE</strong><br>This public demo recreates the workflow and decision points of SALLY using invented data only. It is deliberately disconnected from the production workflow and does not expose candidate, employee or company-confidential information.</footer>
 </div>
 <script>
-(()=>{const stages=[1,2,3,4,5];let selectedDecision='';let calibratedRecommendation='Proceed';let recruiterInput='No additional recruiter challenge provided.';const qs=s=>document.querySelector(s),qsa=s=>[...document.querySelectorAll(s)];function show(n){stages.forEach(i=>qs('#stage'+i).classList.toggle('hidden',i!==n));qsa('.step').forEach(el=>{const i=+el.dataset.step;el.classList.toggle('active',i===n);el.classList.toggle('done',i<n)});qs('#stage'+n).scrollIntoView({behavior:'smooth',block:'start'})}qs('#runEval').addEventListener('click',()=>{show(2);const lines=qsa('.process-line');lines.forEach(x=>x.classList.remove('complete'));qs('#results').classList.add('hidden');let i=0;const timer=setInterval(()=>{if(i<lines.length){lines[i].classList.add('complete');lines[i].innerHTML='<span class="dot"></span>'+lines[i].textContent.replace('...','... ✓');i++}else{clearInterval(timer);qs('#results').classList.remove('hidden')}},420)});qs('#goSpar').addEventListener('click',()=>show(3));qs('#goDecision').addEventListener('click',()=>show(4));qs('#back1').addEventListener('click',()=>show(1));qs('#back2').addEventListener('click',()=>show(2));qs('#back3').addEventListener('click',()=>show(3));qs('#back4').addEventListener('click',()=>show(4));
+(()=>{const stages=[1,2,3,4,5];let selectedDecision='';let calibratedRecommendation='Proceed';let recruiterInput='No additional recruiter challenge provided.';const qs=s=>document.querySelector(s),qsa=s=>[...document.querySelectorAll(s)];function show(n){stages.forEach(i=>qs('#stage'+i).classList.toggle('hidden',i!==n));qsa('.step').forEach(el=>{const i=+el.dataset.step;el.classList.toggle('active',i===n);el.classList.toggle('done',i<n)});qs('#stage'+n).scrollIntoView({behavior:'smooth',block:'start'})}qs('#runEval').addEventListener('click',()=>{show(2);const lines=qsa('.process-line');lines.forEach(x=>{x.classList.remove('complete');x.innerHTML='<span class="dot"></span>'+x.textContent.replace(' ✓','')});qs('#results').classList.add('hidden');const typed=qs('#typedRequest');typed.innerHTML='<span class="typing-dots"><i></i><i></i><i></i></span>';setTimeout(()=>{typed.textContent='Run the candidate evaluation for Alex Morgan.';let i=0;const timer=setInterval(()=>{if(i<lines.length){lines[i].classList.add('complete');lines[i].innerHTML='<span class="dot"></span>'+lines[i].textContent.replace('...','... ✓');i++}else{clearInterval(timer);setTimeout(()=>qs('#results').classList.remove('hidden'),300)}},620)},650)});qs('#goSpar').addEventListener('click',()=>show(3));qs('#goDecision').addEventListener('click',()=>show(4));qs('#back1').addEventListener('click',()=>show(1));qs('#back2').addEventListener('click',()=>show(2));qs('#back3').addEventListener('click',()=>show(3));qs('#back4').addEventListener('click',()=>show(4));
 const answers={
 score:`<p><strong>Why 3/5:</strong> The transcript shows a repeatable research process and one credible example of synthesis, but not enough evidence that the candidate consistently reaches deeper customer insight across different products.</p><h4>Evidence supporting the score</h4><ul><li>Uses reviews, Reddit, competitor ads and customer comments as distinct inputs.</li><li>Connected repeated “starting over” language to a consistency-led campaign angle.</li><li>Explained how the insight changed the creative direction rather than simply describing research activity.</li></ul><h4>What keeps this from 4/5</h4><ul><li>Only one detailed insight-development example was discussed.</li><li>No evidence yet of how they handle conflicting signals across sources.</li><li>Limited proof that the same depth carries across different products or audiences.</li></ul><span class="confidence">CONFIDENCE · MODERATE</span>`,
 missing:`<p>The biggest gap is not whether the candidate does research — that is established. The gap is whether they consistently turn research into <em>non-obvious, decision-changing insight</em>.</p><h4>Evidence I would still want</h4><ul><li>A second end-to-end example: raw inputs → synthesis → hypothesis → creative direction → result.</li><li>An example where research changed or disproved the candidate's initial assumption.</li><li>How they distinguish a frequently repeated observation from an insight worth building creative around.</li><li>How they prioritise when customer language, competitor patterns and performance data point in different directions.</li></ul><h4>Category-specific gap</h4><p>For supplements, I would also test how quickly they can learn claims boundaries, trust requirements and category-specific objections.</p><span class="confidence">EVIDENCE GAP · MATERIAL BUT TESTABLE</span>`,

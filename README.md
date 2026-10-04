@@ -1,10 +1,16 @@
-# Bryan Lim Portfolio — V3.25 New Resume
+# Bryan Lim Portfolio — V3.26 SALLY Refinement
 
-Built from V3.24.
+Built from V3.25.
 
 Updates:
-- Replaces the embedded CV on the Home page with Bryan's latest resume.
-- Replaces the embedded CV on the About page with the same latest resume.
-- The latest resume includes the live portfolio URL: bryanlimwork.vercel.app.
-- No design/layout changes were made to the settled website pages.
-- No external PDF/assets folder is required; the CV remains embedded directly in HTML.
+- Home Featured Work:
+  - Primary title is now `AI Recruiting Partner`.
+  - `SALLY` sits below with the expansion `Screening Analysis & Logging Liaison, for You`.
+- Work page uses the same naming hierarchy.
+- SALLY demo:
+  - Fictional transcript buckets now fade in sequentially.
+  - Run SALLY Evaluation opens with a recruiter chat bubble:
+    `Run the candidate evaluation for Alex Morgan.`
+  - SALLY then reveals four processing steps one by one.
+  - Each score appears as an individual conversational SALLY bubble.
+  - The existing Spar, Decide and Submit stages are preserved.
