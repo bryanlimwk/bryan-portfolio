@@ -109,6 +109,93 @@
   .recruiter-message{min-width:0}
 }
 
+
+/* V3.27 — actual transcript treatment */
+.transcript-intro{
+  max-width:720px;
+  margin-bottom:18px;
+  color:#66706a;
+  font-size:12px;
+  line-height:1.55;
+}
+.actual-transcript{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  max-width:820px;
+}
+.actual-transcript:before{
+  content:"";
+  position:absolute;
+  left:17px;
+  top:18px;
+  bottom:18px;
+  width:1px;
+  background:#d9dfdc;
+}
+.transcript-exchange{
+  position:relative;
+  padding:15px 16px 13px;
+  border:1px solid #dfe3e0;
+  border-radius:13px;
+  background:#fff;
+  opacity:0;
+  transform:translateY(12px);
+  animation:exchangeIn .48s ease forwards;
+  animation-delay:var(--exchange-delay);
+  box-shadow:0 6px 18px rgba(30,42,53,.035);
+}
+@keyframes exchangeIn{to{opacity:1;transform:translateY(0)}}
+.speaker{
+  position:relative;
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:11px;
+  align-items:start;
+}
+.speaker + .speaker{margin-top:12px}
+.speaker-avatar{
+  position:relative;
+  z-index:1;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font:600 9px "IBM Plex Mono",monospace;
+}
+.speaker.recruiter .speaker-avatar{background:#17211f;color:#f7f2e8}
+.speaker.candidate .speaker-avatar{background:#eee8f8;color:#69558d}
+.speaker strong{
+  display:block;
+  margin:1px 0 5px;
+  font-size:11px;
+}
+.speaker p{
+  margin:0;
+  font-size:12px;
+  line-height:1.58;
+  color:#45504a;
+}
+.speaker.recruiter p{font-weight:600;color:#27312d}
+.transcript-tag{
+  display:inline-flex;
+  margin:12px 0 0 47px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#eef4ef;
+  color:#3e6a56;
+  font:600 8px "IBM Plex Mono",monospace;
+  letter-spacing:.055em;
+}
+@media(max-width:700px){
+  .actual-transcript:before{left:15px}
+  .speaker{grid-template-columns:32px 1fr}
+  .speaker-avatar{width:32px;height:32px}
+  .transcript-tag{margin-left:43px}
+}
+
 </style>
 <style>.portfolio-back{position:relative;z-index:999;display:inline-flex;margin:14px 18px 0;padding:8px 11px;border:1px solid #d8d2c5;border-radius:999px;background:#f3efe4;color:#172321;text-decoration:none;font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}</style></head>
 <body><a class="portfolio-back" href="work.html">← BACK TO WORKSPACE</a>
@@ -122,18 +209,55 @@
 <div class="stepper" aria-label="Demo progress"><div class="step active" data-step="1">01 / INTERVIEW</div><div class="step" data-step="2">02 / EVALUATE</div><div class="step" data-step="3">03 / SPAR</div><div class="step" data-step="4">04 / DECIDE</div><div class="step" data-step="5">05 / SUBMIT</div></div>
 
 <section class="panel stage" id="stage1">
-<div class="panel-head"><h2>Recruiter screen complete</h2><span class="pill green">FICTIONAL CANDIDATE · DEMO DATA</span></div>
-<div class="grid"><aside class="side"><p class="eyebrow">Candidate</p><div class="candidate-name">Alex Morgan</div><div class="sub">Creative Strategist · Fictional demo profile</div><div class="facts"><div class="fact"><b>INTERVIEW</b><span>Recruiter Screen · 42 min</span></div><div class="fact"><b>LOCATION</b><span>London, UK</span></div><div class="fact"><b>EXPERIENCE</b><span>4 years · DTC / agency mix</span></div><div class="fact"><b>STATUS</b><span>Awaiting evaluation</span></div></div><span class="pill">NO REAL PERSON OR ROLE</span></aside>
-<div class="main"><p class="eyebrow">Full fictional recruiter-screen transcript</p><p class="transcript-note">For this demo, SALLY evaluates the full transcript below as one evidence set — not hand-picked excerpts. The transcript is shortened only to keep the public demo readable.</p><div class="transcript">
-<div class="quote transcript-fade" style="--quote-delay:0.00s"><b>MOTIVATION</b><p>“I’m looking for a role where I can own more of the thinking behind creative, not just receive a brief and execute it. I like being close to performance data and understanding why something worked.”</p></div>
-<div class="quote transcript-fade" style="--quote-delay:0.12s"><b>RESEARCH PROCESS</b><p>“I usually start with reviews, Reddit, competitor ads and customer comments. I group recurring phrases into themes, then build concepts around the ones that come up most.”</p></div>
-<div class="quote transcript-fade" style="--quote-delay:0.24s"><b>INSIGHT EXAMPLE</b><p>“On one skincare account, customers kept saying they were tired of ‘starting over’. The repeated language was less about wanting a dramatic transformation and more about wanting something they could actually stick with, so we built a campaign around consistency.”</p></div>
-<div class="quote transcript-fade" style="--quote-delay:0.36s"><b>CREATIVE DEVELOPMENT</b><p>“Once I have the angle, I’ll usually map a few different ways into it — problem-led, belief-led, testimonial, or demonstration — so we’re testing the idea and not just one execution.”</p></div>
-<div class="quote transcript-fade" style="--quote-delay:0.48s"><b>TESTING</b><p>“I normally test three or four hooks around a concept first. If the hook gets attention but the ad drops later, I’ll usually change the body or proof rather than kill the whole concept.”</p></div>
-<div class="quote transcript-fade" style="--quote-delay:0.60s"><b>PERFORMANCE DIAGNOSIS</b><p>“I try not to call something a bad concept too quickly. If CTR is healthy but hold rate drops, that tells me something different from an ad that never earns attention in the first place.”</p></div>
-<div class="quote transcript-fade" style="--quote-delay:0.72s"><b>STAKEHOLDER WORKING STYLE</b><p>“I’m comfortable defending an idea, but I also want media buyers and editors to challenge it. Usually the best version comes from being specific about what we are trying to learn from the test.”</p></div>
-<div class="quote transcript-fade" style="--quote-delay:0.84s"><b>GAP / SUPPLEMENTS</b><p>“I haven’t worked directly in supplements. Most of my experience is skincare and beauty, so I’d need to get up to speed on claims, compliance boundaries and the customer objections in this category.”</p></div>
-</div><div class="actions"><button class="btn green" id="runEval">RUN SALLY EVALUATION →</button></div></div></div>
+<div class="panel-head">
+  <h2>Full fictional recruiter screen transcript</h2>
+  <span class="pill">DEMO ONLY · FICTIONAL CANDIDATE</span>
+</div>
+<div class="main">
+  <div class="transcript-intro">
+    <p>This demo shows the interview evidence SALLY receives before evaluation. Each exchange is tagged to the relevant scorecard area so you can see the evidence being assessed.</p>
+  </div>
+
+  <div class="actual-transcript">
+    <div class="transcript-exchange" style="--exchange-delay:.08s">
+      <div class="speaker recruiter"><span class="speaker-avatar">BL</span><div><strong>Bryan · Recruiter</strong><p>What has you considering a move right now, and what are you hoping to find in your next role?</p></div></div>
+      <div class="speaker candidate"><span class="speaker-avatar">AM</span><div><strong>Alex Morgan · Candidate</strong><p>I want to move closer to strategy and have more ownership over why we make a creative decision, not only execute briefs. I enjoy digging into what customers are actually saying and turning that into angles we can test.</p></div></div>
+      <div class="transcript-tag">MOTIVATION</div>
+    </div>
+
+    <div class="transcript-exchange" style="--exchange-delay:.22s">
+      <div class="speaker recruiter"><span class="speaker-avatar">BL</span><div><strong>Bryan · Recruiter</strong><p>Walk me through how you research a new audience before you start developing creative.</p></div></div>
+      <div class="speaker candidate"><span class="speaker-avatar">AM</span><div><strong>Alex Morgan · Candidate</strong><p>I usually start with product reviews, Reddit and competitor ads. I group recurring pains, objections and language, then compare those themes with what has already performed. I’m looking for patterns rather than just collecting quotes.</p></div></div>
+      <div class="transcript-tag">RESEARCH PROCESS</div>
+    </div>
+
+    <div class="transcript-exchange" style="--exchange-delay:.36s">
+      <div class="speaker recruiter"><span class="speaker-avatar">BL</span><div><strong>Bryan · Recruiter</strong><p>Can you give me an example of a research finding that actually changed the creative direction?</p></div></div>
+      <div class="speaker candidate"><span class="speaker-avatar">AM</span><div><strong>Alex Morgan · Candidate</strong><p>On a skincare account, we kept seeing customers describe the problem as feeling like they were “starting over” every time their skin flared up. We stopped leading with ingredient education and tested the emotional frustration of repeatedly restarting a routine. That became a stronger direction for the next concepts.</p></div></div>
+      <div class="transcript-tag">INSIGHT EXAMPLE</div>
+    </div>
+
+    <div class="transcript-exchange" style="--exchange-delay:.50s">
+      <div class="speaker recruiter"><span class="speaker-avatar">BL</span><div><strong>Bryan · Recruiter</strong><p>How do you decide what to change when a creative isn’t performing?</p></div></div>
+      <div class="speaker candidate"><span class="speaker-avatar">AM</span><div><strong>Alex Morgan · Candidate</strong><p>I try not to change everything at once. If the hook is weak, I’ll test different hooks against the same body. If attention is strong but people drop later, I’ll look at the proof, pacing or offer instead. I want each test to tell us something.</p></div></div>
+      <div class="transcript-tag">CREATIVE TESTING</div>
+    </div>
+
+    <div class="transcript-exchange" style="--exchange-delay:.64s">
+      <div class="speaker recruiter"><span class="speaker-avatar">BL</span><div><strong>Bryan · Recruiter</strong><p>How do you work with other people when they disagree with your creative recommendation?</p></div></div>
+      <div class="speaker candidate"><span class="speaker-avatar">AM</span><div><strong>Alex Morgan · Candidate</strong><p>I try to bring the conversation back to the evidence and what we’re trying to learn. If there are two reasonable views, I’d rather define the hypotheses and test both than argue from preference.</p></div></div>
+      <div class="transcript-tag">COMMUNICATION / STAKEHOLDER THINKING</div>
+    </div>
+
+    <div class="transcript-exchange" style="--exchange-delay:.78s">
+      <div class="speaker recruiter"><span class="speaker-avatar">BL</span><div><strong>Bryan · Recruiter</strong><p>Your background is mainly skincare and beauty. How would you approach moving into supplements?</p></div></div>
+      <div class="speaker candidate"><span class="speaker-avatar">AM</span><div><strong>Alex Morgan · Candidate</strong><p>I’d expect the trust barrier and claims environment to be different, so I wouldn’t assume the same playbook transfers directly. I’d start by learning the customer language, the compliance boundaries and what kinds of proof matter before building concepts.</p></div></div>
+      <div class="transcript-tag">CATEGORY TRANSFERABILITY</div>
+    </div>
+  </div>
+
+  <div class="actions"><button class="btn green" id="runEval">RUN SALLY EVALUATION →</button></div>
+</div>
 </section>
 
 <section class="panel stage hidden" id="stage2">
