@@ -30,3 +30,12 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - Keeps the original narrow cream sidebar.
 - Refines the selected-page pill so the teal dot has dedicated spacing and no longer overlaps the label.
 - Inactive links remain plain text with only a subtle hover affordance.
+
+
+## V3.35 — Width + Navigation Alignment
+- Active navigation dot is now part of the flex row with the label, so it is vertically centred with the word instead of floating over it.
+- Sidebar grows slightly from the original footprint to 108px, giving `Experience` more breathing room before the divider.
+- Main page margin follows the sidebar variable, so the wider rail does not overlap content.
+- Removes legacy max-width constraints from Work, Experience and About on desktop.
+- Inner pages now use the available browser width rather than collapsing into a narrow centre/left column.
+- Home composition remains otherwise unchanged.

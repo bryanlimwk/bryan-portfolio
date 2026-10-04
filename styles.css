@@ -952,3 +952,119 @@ body,
     margin:8px 0 0 auto;
   }
 }
+
+
+/* V3.35 — full-width inner pages + refined sidebar */
+
+/* Slightly widen the original rail so Experience has breathing room.
+   Main page margin follows the same variable, so nothing overlaps. */
+:root{
+  --sidebar:108px;
+}
+
+/* Give the sidebar a little extra room before its divider. */
+.side-nav{
+  padding-left:14px;
+  padding-right:18px;
+}
+
+/* Navigation: selected dot + label behave as one centred unit. */
+.side-nav nav a{
+  box-sizing:border-box;
+  width:100%;
+  min-height:30px;
+  padding:7px 10px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:0;
+  white-space:nowrap;
+}
+
+.side-nav nav a.active{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:8px;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+/* Dot is now in normal layout flow, not absolutely floating over text. */
+.side-nav nav a.active::before{
+  content:"";
+  position:static;
+  flex:0 0 6px;
+  width:6px;
+  height:6px;
+  margin:0;
+  border-radius:50%;
+  background:#0F6B63;
+  box-shadow:0 0 0 3px rgba(15,107,99,.09);
+}
+
+/* The brand divider also gets the full usable rail width. */
+.side-brand{
+  margin-right:0;
+}
+
+/* Inner pages should use the desktop canvas rather than stopping at legacy caps. */
+.work-v2,
+.experience-page,
+.about-v322{
+  width:100% !important;
+  max-width:none !important;
+  box-sizing:border-box !important;
+}
+
+/* Work page: allow hero/rule/cards to span the available content area. */
+.work-v2{
+  padding-left:30px !important;
+  padding-right:30px !important;
+}
+.work-v2-grid{
+  width:100% !important;
+}
+
+/* Experience page: restore a broad editorial canvas. */
+.experience-page{
+  padding-left:30px !important;
+  padding-right:30px !important;
+}
+
+/* About page: preserve the 2-column composition but fill available width. */
+.about-v322{
+  padding-left:42px !important;
+  padding-right:42px !important;
+}
+.about-hero{
+  width:100% !important;
+}
+
+/* Keep text readable while letting the overall layouts expand. */
+.about-story{
+  max-width:650px;
+}
+.sb-copy,
+.chapter-copy{
+  max-width:none;
+}
+
+@media(max-width:900px){
+  :root{--sidebar:0px}
+  .side-nav{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  .side-nav nav a,
+  .side-nav nav a.active{
+    width:auto;
+    justify-content:center;
+  }
+  .work-v2,
+  .experience-page,
+  .about-v322{
+    padding-left:24px !important;
+    padding-right:24px !important;
+  }
+}
