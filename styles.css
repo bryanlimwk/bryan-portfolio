@@ -1068,3 +1068,31 @@ body,
     padding-right:24px !important;
   }
 }
+
+/* V3.36 — give Experience breathing room from sidebar divider */
+:root{
+  --sidebar:122px;
+}
+
+.side-nav{
+  padding-left:14px;
+  padding-right:20px;
+}
+
+.side-nav nav a{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+/* Keep selected dot + label neatly centred as one unit. */
+.side-nav nav a.active{
+  gap:8px;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.side-nav nav a.active::before{
+  flex:0 0 6px;
+  width:6px;
+  height:6px;
+}

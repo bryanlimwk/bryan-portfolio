@@ -39,3 +39,10 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - Removes legacy max-width constraints from Work, Experience and About on desktop.
 - Inner pages now use the available browser width rather than collapsing into a narrow centre/left column.
 - Home composition remains otherwise unchanged.
+
+
+## V3.36 — Sidebar Spacing
+- Sidebar widened from 108px to 122px.
+- Divider moves further right so `Experience` no longer touches it.
+- Active dot alignment and selected-pill styling are preserved.
+- Main page margin continues to follow the same sidebar variable, preventing overlap.
