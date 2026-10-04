@@ -1,52 +1,68 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Work — Bryan Lim</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><style>
-/* V3.33 — subtle navigation affordance; original sidebar preserved */
+/* V3.34 — subtle main navigation, correctly spaced */
 .side-nav nav a{
   position:relative;
   display:block;
+  box-sizing:border-box;
   border-radius:999px;
+  cursor:pointer;
   transition:
     background .18s ease,
     color .18s ease,
     transform .18s ease,
     box-shadow .18s ease;
-  cursor:pointer;
 }
 
-/* Inactive links stay visually close to the original design. */
+/* Keep inactive links visually close to the original sidebar. */
 .side-nav nav a:not(.active):hover{
   background:rgba(15,77,74,.055);
-  transform:translateX(3px);
+  transform:translateX(2px);
 }
 
-/* Only the current page receives the floating selection pill. */
+/* Current page only: soft selected pill. */
 .side-nav nav a.active{
   background:#FBF7EE;
   color:#13201D;
   border-radius:999px;
-  box-shadow:0 7px 18px rgba(21,32,30,.10);
+  box-shadow:0 6px 16px rgba(21,32,30,.09);
   font-weight:600;
+  padding-left:25px; /* creates breathing room between dot and label */
 }
 
-/* Small teal selection marker; no dots on inactive links. */
+/* Selection dot lives in its own space rather than overlapping the word. */
 .side-nav nav a.active::before{
   content:"";
   position:absolute;
-  left:9px;
+  left:10px;
   top:50%;
   width:6px;
   height:6px;
   margin-top:-3px;
   border-radius:50%;
   background:#0F6B63;
-  box-shadow:0 0 0 3px rgba(15,107,99,.10);
+  box-shadow:0 0 0 3px rgba(15,107,99,.09);
 }
 
-/* Prevent any experimental divider/pseudo-element from appearing. */
+/* Never show inactive dots. */
+.side-nav nav a:not(.active)::before{
+  content:none;
+}
+
+/* Preserve the original sidebar divider structure; only suppress pseudo dividers. */
 .side-nav::before,
 .side-nav::after,
 .side-brand::before,
 .side-brand::after{
   content:none !important;
+}
+
+@media(max-width:900px){
+  .side-nav nav a.active{
+    padding-left:22px;
+  }
+  .side-nav nav a.active::before{
+    left:8px;
+  }
 }
 </style>
 </head><body><aside class="side-nav"><a class="side-brand" href="index.html">B.</a><nav><a href="index.html" class="">Home</a><a href="work.html" class="active">Work</a><a href="experience.html" class="">Experience</a><a href="about.html" class="">About</a></nav><div class="side-meta">BRYAN LIM<br>SINGAPORE · GMT+8</div></aside><div class="page"><div class="top-strip">TALENT ACQUISITION &nbsp; / &nbsp; PEOPLE &nbsp; / &nbsp; BUSINESS &nbsp; / &nbsp; AI</div><main class="page-main">

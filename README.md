@@ -22,3 +22,11 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - Inactive Home / Work / Experience / About links remain plain text.
 - Hovering an inactive link adds a very light temporary pill and a 3px nudge to signal clickability.
 - SALLY demo refinements from V3.29 are retained.
+
+
+## V3.34 — Navigation + Layout Repair
+- Restores the full shared `styles.css` that was accidentally omitted from recent navigation packages.
+- This re-synchronizes Home, Work, Experience and About with the intended layout and prevents the pages from collapsing toward the center.
+- Keeps the original narrow cream sidebar.
+- Refines the selected-page pill so the teal dot has dedicated spacing and no longer overlaps the label.
+- Inactive links remain plain text with only a subtle hover affordance.
