@@ -53,3 +53,9 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - Active page now uses a rounded highlighted border around the word, inspired by iPhone toggle/selection styling.
 - Adds subtle fill plus inner/outer shadow so the active tab feels selected without looking bulky.
 - Sidebar width from V3.36 is preserved.
+
+
+## V3.38 — Experience Pill Fix
+- Active navigation pill now sizes to its label content rather than inheriting a constrained width.
+- `Experience` is fully enclosed by the selected border.
+- Sidebar receives a small additional width increase to preserve clearance from the divider.
