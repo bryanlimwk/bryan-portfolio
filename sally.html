@@ -248,6 +248,91 @@
   box-shadow:0 0 0 3px rgba(117,169,140,.14);
 }
 
+
+/* V3.39 — candidate overview */
+.candidate-overview{
+  display:grid;
+  grid-template-columns:1.05fr 1.35fr;
+  gap:18px 22px;
+  margin-bottom:20px;
+  padding:18px;
+  border:1px solid #dfe3e0;
+  border-radius:14px;
+  background:linear-gradient(135deg,#fbfaf6,#f4f0fb);
+  box-shadow:0 7px 20px rgba(30,42,53,.04);
+}
+.candidate-identity{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+.candidate-avatar{
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#17211f;
+  color:#f7f2e8;
+  font:600 11px "IBM Plex Mono",monospace;
+}
+.candidate-label{
+  display:block;
+  margin-bottom:4px;
+  color:#69558d;
+  font:600 8px "IBM Plex Mono",monospace;
+  letter-spacing:.08em;
+}
+.candidate-identity h3{
+  margin:0 0 3px;
+  font-size:18px;
+}
+.candidate-identity p{
+  margin:0;
+  font-size:11px;
+  color:#68716c;
+}
+.candidate-meta-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.candidate-meta-grid>div{
+  padding:9px 10px;
+  border:1px solid #e1e4e1;
+  border-radius:9px;
+  background:rgba(255,255,255,.68);
+}
+.candidate-meta-grid span,
+.candidate-context span{
+  display:block;
+  margin-bottom:4px;
+  color:#78807b;
+  font:600 7px "IBM Plex Mono",monospace;
+  letter-spacing:.08em;
+}
+.candidate-meta-grid strong{
+  font-size:10px;
+  font-weight:600;
+}
+.candidate-context{
+  grid-column:1/-1;
+  padding-top:12px;
+  border-top:1px solid #e2e4e1;
+}
+.candidate-context p{
+  margin:0;
+  font-size:11px;
+  line-height:1.55;
+  color:#56615b;
+  max-width:760px;
+}
+@media(max-width:720px){
+  .candidate-overview{grid-template-columns:1fr}
+  .candidate-context{grid-column:auto}
+}
+
 </style>
 <style>.portfolio-back{position:relative;z-index:999;display:inline-flex;margin:14px 18px 0;padding:8px 11px;border:1px solid #d8d2c5;border-radius:999px;background:#f3efe4;color:#172321;text-decoration:none;font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}</style></head>
 <body><a class="portfolio-back" href="work.html">← BACK TO WORKSPACE</a>
@@ -288,7 +373,29 @@
   <span class="pill">DEMO ONLY · FICTIONAL CANDIDATE</span>
 </div>
 <div class="main">
-  <div class="transcript-intro">
+  
+  <div class="candidate-overview">
+    <div class="candidate-identity">
+      <div class="candidate-avatar">AM</div>
+      <div>
+        <span class="candidate-label">FICTIONAL CANDIDATE</span>
+        <h3>Alex Morgan</h3>
+        <p>Creative Strategist · DTC Performance Creative</p>
+      </div>
+    </div>
+    <div class="candidate-meta-grid">
+      <div><span>LOCATION</span><strong>New York, US</strong></div>
+      <div><span>EXPERIENCE</span><strong>4+ years</strong></div>
+      <div><span>BACKGROUND</span><strong>Skincare &amp; Beauty DTC</strong></div>
+      <div><span>INTERVIEW</span><strong>Recruiter Screen</strong></div>
+    </div>
+    <div class="candidate-context">
+      <span>WHY THIS PROFILE?</span>
+      <p>Alex is a fictional candidate with adjacent DTC creative experience. The demo is designed to show how SALLY evaluates transferable evidence, not a perfect match.</p>
+    </div>
+  </div>
+
+<div class="transcript-intro">
     <p>This demo shows the interview evidence SALLY receives before evaluation. Each exchange is tagged to the relevant scorecard area so you can see the evidence being assessed.</p>
   </div>
 

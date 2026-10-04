@@ -59,3 +59,10 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - Active navigation pill now sizes to its label content rather than inheriting a constrained width.
 - `Experience` is fully enclosed by the selected border.
 - Sidebar receives a small additional width increase to preserve clearance from the divider.
+
+
+## V3.39 — SALLY Candidate Overview
+- Restores a compact fictional candidate context card above the transcript.
+- Shows Alex Morgan's name, demo role, location, experience level, DTC background and interview stage.
+- Adds a short note explaining why the profile is useful for the demo.
+- Transcript, scorecard drawer and evaluation flow remain unchanged.
