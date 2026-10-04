@@ -1,0 +1,17 @@
+{
+  "name": "bryan-portfolio",
+  "version": "3.28.0",
+  "description": "Bryan Lim Portfolio - Talent Acquisition Professional",
+  "private": true,
+  "scripts": {
+    "dev": "npx http-server -p 3000",
+    "start": "npx http-server -p 3000"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
