@@ -105,3 +105,11 @@ Home / Projects / Experience / About; simplified active navigation; larger mobil
 - Explicitly pins all three CTAs to the same desktop vertical coordinate.
 - Forces preview panels to begin on the same horizontal line.
 - Mobile cards return to natural flow.
+
+## V4.6 — Exact Featured CTA Baseline
+- Fixes the actual `.feature-copy` blocks rather than generic card wrappers.
+- All three desktop copy areas use the same 320px height.
+- CTA buttons are pushed to the bottom of that shared copy area.
+- `TRY SALLY`, `EXPLORE DASHBOARD`, and `VIEW PROJECT` therefore share one baseline.
+- Preview panels begin at the same horizontal position.
+- Mobile remains natural-height.

@@ -1517,3 +1517,53 @@ p{line-height:1.6}
     margin-top:18px !important;
   }
 }
+
+/* V4.6 — exact Featured Work CTA baseline fix */
+@media(min-width:901px){
+  .home-page .feature-grid{
+    align-items:stretch !important;
+  }
+
+  .home-page .feature-card{
+    display:flex !important;
+    flex-direction:column !important;
+    height:100% !important;
+  }
+
+  .home-page .feature-card .feature-copy{
+    box-sizing:border-box !important;
+    height:320px !important;
+    min-height:320px !important;
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  .home-page .feature-card .feature-copy > p{
+    flex:1 1 auto !important;
+    margin-bottom:14px !important;
+  }
+
+  .home-page .feature-card .feature-copy .primary-btn,
+  .home-page .feature-card .feature-copy .featured-cta{
+    position:static !important;
+    top:auto !important;
+    left:auto !important;
+    margin-top:auto !important;
+    align-self:flex-start !important;
+  }
+
+  .home-page .feature-card .feature-visual{
+    flex:1 1 auto !important;
+    margin-top:0 !important;
+  }
+}
+
+@media(max-width:900px){
+  .home-page .feature-card .feature-copy{
+    height:auto !important;
+    min-height:0 !important;
+  }
+  .home-page .feature-card .feature-copy > p{
+    flex:none !important;
+  }
+}
