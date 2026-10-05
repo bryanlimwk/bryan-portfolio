@@ -97,3 +97,11 @@ Home / Projects / Experience / About; simplified active navigation; larger mobil
 - `TRY SALLY`, `EXPLORE DASHBOARD`, and `VIEW PROJECT` are anchored to the same horizontal baseline on desktop.
 - Project previews consequently begin on the same horizontal plane.
 - Mobile cards retain natural content height.
+
+
+## V4.5 — Featured Work Baseline Fix
+- Targets the actual Featured Work cards rather than generic card selectors.
+- Adds a shared class to AI Recruiting Partner, TA Dashboard, and ShopBack Connect.
+- Explicitly pins all three CTAs to the same desktop vertical coordinate.
+- Forces preview panels to begin on the same horizontal line.
+- Mobile cards return to natural flow.
