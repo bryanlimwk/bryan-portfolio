@@ -113,3 +113,12 @@ Home / Projects / Experience / About; simplified active navigation; larger mobil
 - `TRY SALLY`, `EXPLORE DASHBOARD`, and `VIEW PROJECT` therefore share one baseline.
 - Preview panels begin at the same horizontal position.
 - Mobile remains natural-height.
+
+
+## V4.7 — Featured Work Card Repair
+- Removes the broken fixed/grid/absolute alignment rules that created the large empty area.
+- Restores the natural card layout.
+- Uses `.feature-copy` as the shared desktop content zone.
+- Gives all three copy areas the same minimum height and pushes each CTA to the bottom.
+- Keeps previews immediately below the copy area.
+- Mobile remains natural-height.

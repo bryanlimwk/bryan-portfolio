@@ -1454,116 +1454,80 @@ p{line-height:1.6}
   }
 }
 
-/* V4.5 — exact Featured Work baseline alignment */
 
-/* All three featured cards use the same two-row structure:
-   text/CTA row grows equally; preview row begins at identical y-position. */
-.home-page .featured-unified-card{
-  display:grid !important;
-  grid-template-rows:minmax(330px, auto) 1fr !important;
+/* V4.7 — repair Featured Work cards and align CTAs cleanly */
+
+/* Restore natural card structure. */
+.home-page .feature-card{
+  display:flex !important;
+  flex-direction:column !important;
   height:100% !important;
 }
 
-/* The textual half of each card is the first direct child in the current markup. */
-.home-page .featured-unified-card > :first-child{
+/* The actual text/copy section is .feature-copy.
+   Keep natural content, but equalise its minimum height on desktop. */
+.home-page .feature-card .feature-copy{
   display:flex !important;
   flex-direction:column !important;
-  min-height:330px !important;
-  box-sizing:border-box !important;
+  flex:0 0 auto !important;
+  min-height:320px !important;
+  position:relative !important;
+  padding-bottom:18px !important;
 }
 
-/* CTA is explicitly tagged and pinned to bottom of that first section. */
-.home-page .featured-unified-card .featured-cta{
+/* Remove any absolute-positioning from earlier experiments. */
+.home-page .feature-card .featured-cta,
+.home-page .feature-card .primary-btn,
+.home-page .feature-card .btn{
+  position:static !important;
+  left:auto !important;
+  top:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+}
+
+/* Push the CTA to the bottom of the equalised copy area. */
+.home-page .feature-card .featured-cta,
+.home-page .feature-card .primary-btn,
+.home-page .feature-card .btn{
   margin-top:auto !important;
   align-self:flex-start !important;
 }
 
-/* Force all previews to start at the same line. */
-.home-page .featured-unified-card > :nth-child(2){
-  border-top:1px solid rgba(68,111,94,.20) !important;
+/* Preview section follows immediately after copy, at same level across cards. */
+.home-page .feature-card .feature-visual{
   margin-top:0 !important;
+  flex:1 1 auto !important;
 }
 
-/* Defensive rule: if the button isn't inside the first wrapper due legacy markup,
-   give every CTA the same desktop vertical coordinate within its card. */
+/* Remove any accidental giant blank area caused by prior grid-row rules. */
+.home-page .featured-unified-card{
+  display:flex !important;
+  flex-direction:column !important;
+  grid-template-rows:none !important;
+  position:static !important;
+}
+
+.home-page .featured-unified-card > :first-child{
+  min-height:0 !important;
+  padding-bottom:0 !important;
+}
+
+/* Desktop alignment target. */
 @media(min-width:901px){
-  .home-page .featured-unified-card{
-    position:relative !important;
-    padding-bottom:0 !important;
-  }
-  .home-page .featured-unified-card .featured-cta{
-    position:absolute !important;
-    left:18px !important;
-    top:286px !important;
-    margin:0 !important;
-    z-index:2 !important;
-  }
-  .home-page .featured-unified-card > :first-child{
-    padding-bottom:74px !important;
-  }
-}
-
-/* Mobile: return to natural flow. */
-@media(max-width:900px){
-  .home-page .featured-unified-card{
-    display:flex !important;
-    flex-direction:column !important;
-  }
-  .home-page .featured-unified-card > :first-child{
-    min-height:0 !important;
-  }
-  .home-page .featured-unified-card .featured-cta{
-    position:static !important;
-    margin-top:18px !important;
-  }
-}
-
-/* V4.6 — exact Featured Work CTA baseline fix */
-@media(min-width:901px){
-  .home-page .feature-grid{
-    align-items:stretch !important;
-  }
-
-  .home-page .feature-card{
-    display:flex !important;
-    flex-direction:column !important;
-    height:100% !important;
-  }
-
   .home-page .feature-card .feature-copy{
-    box-sizing:border-box !important;
-    height:320px !important;
     min-height:320px !important;
-    display:flex !important;
-    flex-direction:column !important;
-  }
-
-  .home-page .feature-card .feature-copy > p{
-    flex:1 1 auto !important;
-    margin-bottom:14px !important;
-  }
-
-  .home-page .feature-card .feature-copy .primary-btn,
-  .home-page .feature-card .feature-copy .featured-cta{
-    position:static !important;
-    top:auto !important;
-    left:auto !important;
-    margin-top:auto !important;
-    align-self:flex-start !important;
-  }
-
-  .home-page .feature-card .feature-visual{
-    flex:1 1 auto !important;
-    margin-top:0 !important;
   }
 }
 
+/* Mobile should remain natural-height. */
 @media(max-width:900px){
   .home-page .feature-card .feature-copy{
-    height:auto !important;
     min-height:0 !important;
   }
-  .home-page .feature-card .feature-copy > p{
-    flex:none !important;
+  .home-page .feature-card .featured-cta,
+  .home-page .feature-card .primary-btn,
+  .home-page .feature-card .btn{
+    margin-top:18px !important;
   }
 }
