@@ -1189,3 +1189,126 @@ p{line-height:1.6}
  .hero-actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important}
  .hero-actions a{margin:0!important;min-height:44px!important}
 }
+
+/* V4.1 — remove decorative section dividers and let text flow */
+.hero,
+.page-hero,
+.work-v2,
+.experience-page,
+.about-v322{
+  border-top:0 !important;
+}
+.section-head,
+.section-header,
+.work-v2-header,
+.about-section,
+.experience-section{
+  border-top:0 !important;
+}
+
+/* V4.1 — consistent primary hero CTAs */
+.hero-actions{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:12px !important;
+}
+.hero-actions a,
+.hero-actions .btn,
+.hero-actions .button{
+  min-width:178px !important;
+  min-height:46px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  padding:0 18px !important;
+  margin:0 !important;
+  border-radius:8px !important;
+  background:#0F4D4A !important;
+  border:1px solid #0F4D4A !important;
+  color:#FFFDF8 !important;
+  font-weight:800 !important;
+  text-transform:uppercase !important;
+  text-align:center !important;
+  letter-spacing:.02em !important;
+  box-shadow:none !important;
+}
+.hero-actions a:hover,
+.hero-actions .btn:hover,
+.hero-actions .button:hover{
+  background:#0C403D !important;
+  border-color:#0C403D !important;
+}
+
+/* V4.1 — unified Featured Work palette */
+.feature-card,
+.featured-card,
+.project-card,
+.work-card{
+  background:#EEF4EF !important;
+  border-color:#C9D8CF !important;
+}
+.feature-card:nth-child(n),
+.featured-card:nth-child(n),
+.project-card:nth-child(n),
+.work-card:nth-child(n){
+  background:#EEF4EF !important;
+  border-color:#C9D8CF !important;
+}
+.feature-card::before,
+.featured-card::before,
+.project-card::before,
+.work-card::before{
+  background:#8FB39D !important;
+}
+
+/* V4.1 — clearer About contact hierarchy */
+.about-contact .about-actions{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:14px !important;
+  margin-top:26px !important;
+  align-items:center !important;
+}
+.about-linkedin-cta{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  min-height:46px !important;
+  padding:0 15px !important;
+  border:1px solid rgba(255,255,255,.78) !important;
+  border-radius:8px !important;
+  color:#FFFFFF !important;
+  font-weight:700 !important;
+  text-decoration:none !important;
+}
+.about-linkedin-cta .linkedin-mark{
+  width:28px !important;
+  height:28px !important;
+  display:grid !important;
+  place-items:center !important;
+  border-radius:5px !important;
+  background:#FFFFFF !important;
+  color:#12302C !important;
+  font-family:Arial,sans-serif !important;
+  font-size:16px !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+}
+.about-contact .about-actions a{
+  margin:0 !important;
+}
+.about-contact .about-actions + *,
+.about-contact .contact-thought{
+  margin-top:22px !important;
+}
+@media(max-width:560px){
+  .about-contact .about-actions{
+    flex-direction:column !important;
+    align-items:stretch !important;
+  }
+  .about-contact .about-actions a{
+    width:100% !important;
+    justify-content:flex-start !important;
+  }
+}

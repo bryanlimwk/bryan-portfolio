@@ -70,3 +70,12 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 
 ## V4 UX Refresh
 Home / Projects / Experience / About; simplified active navigation; larger mobile typography; neutralized card styling; consistent CTAs; Projects naming; About 'At a glance'; existing project demos retained.
+
+
+## V4.1 — UX Refinement
+- Removes forced heading line breaks so copy flows naturally at wider viewport widths.
+- Reduces decorative divider usage in primary content sections.
+- Standardises `Explore My Projects` and `View / Download CV` as matching green, bold, uppercase, centred CTAs.
+- Unifies Featured Work cards to a single green palette.
+- Improves About contact hierarchy with a larger, higher-contrast LinkedIn CTA labelled `VIEW LINKEDIN PROFILE`.
+- Adds more spacing around contact actions so they do not crowd the About CTA area.
