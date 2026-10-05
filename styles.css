@@ -1333,3 +1333,123 @@ p{line-height:1.6}
 .home-page .contact-icon{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border-radius:7px;background:#F7F2E8;color:var(--teal);font:800 18px/1 Arial,sans-serif}
 .home-page .about-close .socials a:hover .contact-label{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:900px){.home-page .home-section{padding-top:38px!important;padding-bottom:38px!important}.home-page .about-close>div:last-child{gap:26px!important}.home-page .contact-icon{width:42px;height:42px;flex-basis:42px;font-size:19px}}
+
+/* V4.3 — final homepage flow/contact cleanup */
+
+/* Remove the two remaining horizontal rules around the hero. */
+.home-page .top-strip{
+  border-bottom:0 !important;
+}
+.home-page .home-hero{
+  border-bottom:0 !important;
+}
+
+/* Email should visually match the LinkedIn contact row exactly. */
+.home-page .about-close .socials a[href^="mailto:"]{
+  border-bottom:0 !important;
+  width:auto !important;
+  max-width:100% !important;
+  font-family:Inter,Arial,sans-serif !important;
+  font-size:15px !important;
+  font-weight:650 !important;
+  letter-spacing:normal !important;
+  overflow-wrap:anywhere;
+  text-decoration:none !important;
+}
+
+.home-page .about-close .socials a[href*="linkedin.com"]{
+  font-family:Inter,Arial,sans-serif !important;
+  font-size:15px !important;
+  font-weight:650 !important;
+  letter-spacing:normal !important;
+}
+
+/* Keep hover treatment consistent without drawing an underline under the whole email. */
+.home-page .about-close .socials a[href^="mailto:"]:hover{
+  opacity:1 !important;
+}
+.home-page .about-close .socials a:hover .contact-label{
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+@media(max-width:900px){
+  .home-page .about-close .socials a[href^="mailto:"],
+  .home-page .about-close .socials a[href*="linkedin.com"]{
+    font-size:16px !important;
+  }
+}
+
+/* V4.4 — Featured Work CTA alignment */
+
+/* Each featured card becomes a vertical flex layout. */
+.home-page .featured-grid > *,
+.home-page .featured-work-grid > *,
+.home-page .featured-section .project-card,
+.home-page .featured-section .feature-card,
+.home-page .featured-section .work-card{
+  display:flex !important;
+  flex-direction:column !important;
+}
+
+/* The upper copy area grows to the same available height. */
+.home-page .featured-section .project-card > .card-copy,
+.home-page .featured-section .feature-card > .card-copy,
+.home-page .featured-section .work-card > .card-copy,
+.home-page .featured-section .project-card > .project-copy,
+.home-page .featured-section .feature-card > .project-copy,
+.home-page .featured-section .work-card > .project-copy{
+  display:flex !important;
+  flex-direction:column !important;
+  flex:1 1 auto !important;
+}
+
+/* Push CTA to the bottom of the copy area. */
+.home-page .featured-section .project-card .btn,
+.home-page .featured-section .project-card .button,
+.home-page .featured-section .project-card > a[class*="btn"],
+.home-page .featured-section .feature-card .btn,
+.home-page .featured-section .feature-card .button,
+.home-page .featured-section .feature-card > a[class*="btn"],
+.home-page .featured-section .work-card .btn,
+.home-page .featured-section .work-card .button,
+.home-page .featured-section .work-card > a[class*="btn"]{
+  margin-top:auto !important;
+  align-self:flex-start !important;
+}
+
+/* Existing homepage implementation: equalise the card body before the preview. */
+.home-page .featured-card-top,
+.home-page .feature-card-top,
+.home-page .project-card-top{
+  display:flex !important;
+  flex-direction:column !important;
+  flex:1 1 auto !important;
+}
+
+.home-page .featured-card-top .project-cta,
+.home-page .feature-card-top .project-cta,
+.home-page .project-card-top .project-cta{
+  margin-top:auto !important;
+}
+
+/* Desktop cards share one top-section height so buttons + previews line up. */
+@media(min-width:901px){
+  .home-page .featured-section .project-card,
+  .home-page .featured-section .feature-card,
+  .home-page .featured-section .work-card{
+    height:100% !important;
+  }
+}
+
+/* Mobile remains natural-height; no artificial blank space. */
+@media(max-width:900px){
+  .home-page .featured-section .project-card .btn,
+  .home-page .featured-section .project-card .button,
+  .home-page .featured-section .feature-card .btn,
+  .home-page .featured-section .feature-card .button,
+  .home-page .featured-section .work-card .btn,
+  .home-page .featured-section .work-card .button{
+    margin-top:18px !important;
+  }
+}

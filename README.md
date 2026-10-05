@@ -84,3 +84,16 @@ Home / Projects / Experience / About; simplified active navigation; larger mobil
 - Homepage section divider rules removed; whitespace now separates sections.
 - Featured Work cards all use the TA Dashboard mint/green palette.
 - Hello, I'm Bryan contact area now has a larger LinkedIn icon with `My LinkedIn Profile` and a separate mail icon with the visible email address.
+
+
+## V4.3 — Homepage Cleanup
+- Removes the two remaining horizontal rules: beneath the top strip and beneath the hero.
+- Removes the legacy underline/border beneath the email address.
+- Makes the email typography identical to `My LinkedIn Profile` using Inter, matching size, weight and spacing.
+
+
+## V4.4 — Featured Work CTA Alignment
+- Featured Work cards use a consistent vertical flex structure.
+- `TRY SALLY`, `EXPLORE DASHBOARD`, and `VIEW PROJECT` are anchored to the same horizontal baseline on desktop.
+- Project previews consequently begin on the same horizontal plane.
+- Mobile cards retain natural content height.
