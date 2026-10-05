@@ -1312,3 +1312,24 @@ p{line-height:1.6}
     justify-content:flex-start !important;
   }
 }
+
+/* V4.2 — Home flow refinement */
+.home-page .home-section{border-bottom:0!important;padding-top:48px!important;padding-bottom:48px!important}
+.home-page .home-section:first-of-type{padding-top:18px!important}
+.home-page .home-section:last-of-type{border-bottom:0!important}
+.home-page .section-head{border:0!important}
+.home-page .section-head::before,.home-page .section-head::after{display:none!important;content:none!important}
+
+/* All Featured Work cards use the TA Dashboard palette */
+.home-page .feature-card,.home-page .feature-card:nth-child(1),.home-page .feature-card:nth-child(2),.home-page .feature-card:nth-child(3){background:linear-gradient(180deg,var(--teal-soft),rgba(255,255,255,.52) 40%)!important;border-color:#C8DDD8!important}
+.home-page .feature-card:nth-child(n) .project-num,.home-page .feature-card:nth-child(n) .feature-kicker{color:var(--teal)!important}
+.home-page .feature-card:nth-child(n) .primary-btn{background:var(--teal)!important;color:#fff!important}
+.home-page .feature-card:nth-child(n) .demo-pill{border-color:#8FB8AE!important;color:#356D61!important;background:#E9F3F0!important}
+
+/* Hello / contact: explicit destinations with larger icons */
+.home-page .about-close>div:last-child{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:22px!important}
+.home-page .about-close .socials{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:12px!important;font-size:15px!important}
+.home-page .about-close .socials a{display:flex!important;align-items:center!important;gap:12px!important;color:#F7F2E8!important;text-decoration:none!important;font-weight:650!important;line-height:1.2!important}
+.home-page .contact-icon{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border-radius:7px;background:#F7F2E8;color:var(--teal);font:800 18px/1 Arial,sans-serif}
+.home-page .about-close .socials a:hover .contact-label{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.home-page .home-section{padding-top:38px!important;padding-bottom:38px!important}.home-page .about-close>div:last-child{gap:26px!important}.home-page .contact-icon{width:42px;height:42px;flex-basis:42px;font-size:19px}}

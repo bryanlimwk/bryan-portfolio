@@ -79,3 +79,8 @@ Home / Projects / Experience / About; simplified active navigation; larger mobil
 - Unifies Featured Work cards to a single green palette.
 - Improves About contact hierarchy with a larger, higher-contrast LinkedIn CTA labelled `VIEW LINKEDIN PROFILE`.
 - Adds more spacing around contact actions so they do not crowd the About CTA area.
+
+## V4.2 — Home Flow Refinement
+- Homepage section divider rules removed; whitespace now separates sections.
+- Featured Work cards all use the TA Dashboard mint/green palette.
+- Hello, I'm Bryan contact area now has a larger LinkedIn icon with `My LinkedIn Profile` and a separate mail icon with the visible email address.
