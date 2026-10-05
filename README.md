@@ -66,3 +66,7 @@ Selected SALLY side tab now uses a much clearer iOS-style raised pill/bubble tre
 - Shows Alex Morgan's name, demo role, location, experience level, DTC background and interview stage.
 - Adds a short note explaining why the profile is useful for the demo.
 - Transcript, scorecard drawer and evaluation flow remain unchanged.
+
+
+## V4 UX Refresh
+Home / Projects / Experience / About; simplified active navigation; larger mobile typography; neutralized card styling; consistent CTAs; Projects naming; About 'At a glance'; existing project demos retained.

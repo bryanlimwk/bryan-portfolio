@@ -1154,3 +1154,38 @@ body,
 .side-nav{
   padding-right:18px;
 }
+
+/* V4 UX REFRESH */
+body{font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.55}
+p{line-height:1.6}
+.side-nav nav a,.side-nav nav a.active{width:max-content!important;max-width:100%!important;min-height:auto!important;padding:5px 0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important;font-weight:400!important}
+.side-nav nav a::before,.side-nav nav a.active::before{content:none!important;display:none!important}
+.side-nav nav a.active{font-weight:700!important}
+.side-nav nav a:hover{background:transparent!important;transform:translateX(2px)!important;text-decoration:underline;text-underline-offset:4px}
+.career-card,.project-card,.curiosity-card,.work-v2 .work-card{background:#FBF8F0!important;border-color:#D9D3C7!important;box-shadow:none!important}
+.career-card::before,.project-card::before,.work-v2 .work-card::before,.work-v2 .work-card::after{background:#D9D3C7!important}
+.hero-actions a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:0 18px!important;border-radius:999px!important}
+.curiosity-card{text-align:left!important}
+.curiosity-card .arrow,.curiosity-card [class*="arrow"]{display:none!important}
+.about-v322 .fact-card{min-height:0!important;padding:18px!important}
+@media(max-width:900px){
+ body{font-size:16px!important}
+ .side-nav{position:relative!important;width:100%!important;min-width:0!important;height:auto!important;padding:18px 20px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;border-right:0!important;border-bottom:1px solid #D8D2C6!important;background:#F6F1E7!important}
+ .side-brand{margin:0!important;padding:0!important;font-size:24px!important}
+ .side-nav nav{display:flex!important;flex-direction:row!important;gap:18px!important;width:auto!important}
+ .side-nav nav a,.side-nav nav a.active{font-size:14px!important;padding:4px 0!important}
+ .side-meta{display:none!important}.page{margin-left:0!important}
+ .hero h1 br{display:none}
+ .hero p,.work-v2 p,.experience-page p,.about-v322 p{font-size:16px!important}
+ .career-grid,.project-grid,.work-v2-grid{gap:12px!important}
+ .career-card{min-height:0!important;border-radius:10px!important}
+ .about-facts,.facts-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .eyebrow,.section-label{text-transform:none!important;letter-spacing:.02em!important}
+}
+@media(max-width:560px){
+ .side-nav{padding:16px 18px!important}.side-nav nav{gap:12px!important}
+ .side-nav nav a,.side-nav nav a.active{font-size:13px!important}
+ h1{line-height:1.02!important}
+ .hero-actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important}
+ .hero-actions a{margin:0!important;min-height:44px!important}
+}
